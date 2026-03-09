@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Lucas Pizani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .project-list { display: flex; flex-direction: column; }
+    .project-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left 0.2s;
+    }
+    .project-item:first-child { border-top: 1px solid var(--border); }
+    .project-item:hover { padding-left: 0.4rem; }
+
+    .proj-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--border);
+      padding-top: 0.35rem;
+      font-weight: 500;
+    }
+    .project-item:hover .proj-num { color: var(--accent); }
+
+    .proj-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 1rem; margin-bottom: 0.5rem;
+    }
+    .proj-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: var(--ink);
+    }
+    .proj-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .s-wip     { background: #FEF9C3; color: #854D0E; border: 1px solid #FDE68A; }
+    .s-done    { background: var(--accent2-light); color: #065F46; border: 1px solid #A7F3D0; }
+    .s-private { background: var(--tag-bg); color: var(--muted); border: 1px solid var(--border); }
+
+    .proj-company { font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 0.6rem; }
+    .proj-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; max-width: 680px; }
+    .proj-footer { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+    .proj-link {
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--accent); margin-left: auto;
+      padding-bottom: 1px; border-bottom: 1px solid var(--accent);
+      transition: opacity 0.15s;
+    }
+    .proj-link:hover { opacity: 0.7; }
+
+    .note-box {
+      margin-top: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem 1.6rem;
+      font-size: 0.85rem; color: var(--muted); line-height: 1.7;
+    }
+    .note-box a { color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+
+    @media (max-width: 600px) {
+      .project-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .proj-num { display: none; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Lucas Pizani</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <p class="eyebrow fade">Work</p>
+  <h1 class="fade-2" style="margin-bottom:0.5rem;">Projects.</h1>
+  <p class="fade-2" style="margin-bottom:3rem;">Competitions, internship work, and side projects.</p>
+
+  <div class="project-list">
+
+    <div class="project-item fade-3">
+      <div class="proj-num">01</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">Capability Intelligence Pipeline</div>
+          <span class="proj-status s-private">Private</span>
+        </div>
+        <div class="proj-company">Karrera AI · São Paulo, Brazil</div>
+        <p class="proj-desc">End-to-end ML pipeline powering Karrera's professional capability database. Used sentence transformers to extract structured data from unstructured sources, applied MinHash + HDBSCAN clustering on 260K+ entries to reduce redundancy by 70%, and trained neural classifiers across 312 categories. Built scalable Python pipelines with ChromaDB for semantic search.</p>
+        <div class="proj-footer">
+          <span class="tag">SBERT</span><span class="tag">HDBSCAN</span><span class="tag">MinHash</span><span class="tag">ChromaDB</span><span class="tag">PyTorch</span><span class="tag">REST API</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-3">
+      <div class="proj-num">02</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">March Machine Learning Mania 2026</div>
+          <span class="proj-status s-wip">In progress</span>
+        </div>
+        <div class="proj-company">Kaggle Competition</div>
+        <p class="proj-desc">Third year competing in Kaggle's NCAA tournament prediction challenge. Building on two years of iteration — refining Elo rating systems, time-frame-based averages, and ensemble architecture to forecast win probabilities across 137,000+ matchups.</p>
+        <div class="proj-footer">
+          <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">Elo Ratings</span><span class="tag">Ensemble</span>
+          <a class="proj-link" href="https://kaggle.com/lucascarbogninpizani" target="_blank">Kaggle profile →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-3">
+      <div class="proj-num">03</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">AI Agent — Pi515 Day of Innovation</div>
+          <span class="proj-status s-wip">In progress</span>
+        </div>
+        <div class="proj-company">Pi515 · Iowa</div>
+        <p class="proj-desc">Building an AI agent for Pi515's student AI challenge — Iowa's premier tech showcase. Applying multi-modal AI and big data to address a real societal problem in the Iowa community.</p>
+        <div class="proj-footer">
+          <span class="tag">AI Agents</span><span class="tag">LLMs</span><span class="tag">Python</span>
+          <a class="proj-link" href="https://www.pi515.org/day-of-innovation/ai-challenge" target="_blank">Pi515 challenge →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-4">
+      <div class="proj-num">04</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">March Machine Learning Mania 2025</div>
+          <span class="proj-status s-done">831 / 1,721 teams</span>
+        </div>
+        <div class="proj-company">Kaggle Competition</div>
+        <p class="proj-desc">Enhanced the 2024 model with Elo rating systems, time-frame-based performance averages, and additional contextual variables. Predicted win probabilities for 137,000+ possible matchups across both men's and women's tournaments.</p>
+        <div class="proj-footer">
+          <span class="tag">Python</span><span class="tag">Elo</span><span class="tag">Feature Engineering</span><span class="tag">Ensemble</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-4">
+      <div class="proj-num">05</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">March Machine Learning Mania 2024</div>
+          <span class="proj-status s-done">302 / 820 — Top 37%</span>
+        </div>
+        <div class="proj-company">Kaggle Competition</div>
+        <p class="proj-desc">Built feature tables in Google BigQuery from 30+ data sources, then ensembled XGBoost, Logistic Regression, Random Forest, and GaussianNB with GridSearchCV hyperparameter tuning. Applied Monte Carlo simulation to generate 10,000 bracket scenarios for both tournaments.</p>
+        <div class="proj-footer">
+          <span class="tag">XGBoost</span><span class="tag">BigQuery</span><span class="tag">Monte Carlo</span><span class="tag">GridSearchCV</span><span class="tag">Ensemble</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-4">
+      <div class="proj-num">06</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">UP Platform</div>
+          <span class="proj-status s-done">Completed</span>
+        </div>
+        <div class="proj-company">Noon App · Brazil / USA</div>
+        <p class="proj-desc">Co-developed a decentralized professional identity platform. Built integrated Knowledge and Social Graphs powering an AI assistant that understands users' skills, career paths, and community dynamics.</p>
+        <div class="proj-footer">
+          <span class="tag">Knowledge Graphs</span><span class="tag">Social Graphs</span><span class="tag">AI Assistant</span><span class="tag">Python</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-item fade-5">
+      <div class="proj-num">07</div>
+      <div>
+        <div class="proj-header">
+          <div class="proj-title">Data Analysis Project</div>
+          <span class="proj-status s-private">NDA</span>
+        </div>
+        <div class="proj-company">Confidential</div>
+        <p class="proj-desc">Statistical modeling and data science project under NDA. Applied advanced analytical methods to deliver actionable insights. Details withheld per the organization's request.</p>
+        <div class="proj-footer">
+          <span class="tag">Data Analysis</span><span class="tag">Statistical Modeling</span><span class="tag">Python</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box fade-5">
+    Most of my current work lives in private repositories. Public notebooks on <a href="https://kaggle.com/lucascarbogninpizani" target="_blank">Kaggle</a> and <a href="https://github.com/lcpizani" target="_blank">GitHub</a>.
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Lucas Carbognin Pizani</span>
+  <span>Davenport, Iowa</span>
+</footer>
+</body>
+</html>

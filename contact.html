@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Lucas Pizani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-intro {
+      font-size: 1.1rem; color: var(--muted); line-height: 1.8;
+      max-width: 540px; margin-bottom: 3.5rem;
+    }
+
+    .contact-list { display: flex; flex-direction: column; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: padding-left 0.15s, background 0.15s;
+    }
+    .contact-row:first-child { border-top: 1px solid var(--border); }
+    .contact-row:hover { padding-left: 0.5rem; }
+
+    .contact-label {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted);
+    }
+    .contact-val { font-size: 0.92rem; color: var(--ink); font-weight: 400; }
+    .contact-action {
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .contact-action:hover { opacity: 0.7; }
+
+    /* availability */
+    .avail-box {
+      margin-top: 3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 2rem;
+    }
+    .avail-left {}
+    .avail-title {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.5rem;
+    }
+    .avail-body { font-size: 0.92rem; color: var(--ink); line-height: 1.6; }
+    .avail-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent2-light); border: 1px solid #A7F3D0;
+      border-radius: 20px; padding: 0.5rem 1.1rem;
+      font-size: 0.78rem; font-weight: 600; color: #065F46;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .avail-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    @media (max-width: 640px) {
+      .contact-row { grid-template-columns: 100px 1fr; }
+      .contact-action { display: none; }
+      .avail-box { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <span class="nav-logo">Lucas Pizani</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <p class="eyebrow fade">Get in touch</p>
+  <h1 class="fade-2" style="margin-bottom:1rem;">Let's connect.</h1>
+  <p class="contact-intro fade-3">
+    I'm graduating in May 2026 and actively looking for full-time roles in data science, ML engineering, and AI. I'm also happy to talk about research, competitions, or anything interesting.
+  </p>
+
+  <div class="contact-list">
+    <div class="contact-row fade-3">
+      <span class="contact-label">Email</span>
+      <span class="contact-val">lcpizani@gmail.com</span>
+      <a class="contact-action" href="mailto:lcpizani@gmail.com">Write →</a>
+    </div>
+    <div class="contact-row fade-3">
+      <span class="contact-label">Phone</span>
+      <span class="contact-val">+1 (563) 381-7571</span>
+      <a class="contact-action" href="tel:+15633817571">Call →</a>
+    </div>
+    <div class="contact-row fade-4">
+      <span class="contact-label">LinkedIn</span>
+      <span class="contact-val">linkedin.com/in/lucas-c-pizani</span>
+      <a class="contact-action" href="https://linkedin.com/in/lucas-c-pizani" target="_blank">Open →</a>
+    </div>
+    <div class="contact-row fade-4">
+      <span class="contact-label">GitHub</span>
+      <span class="contact-val">github.com/lcpizani</span>
+      <a class="contact-action" href="https://github.com/lcpizani" target="_blank">Open →</a>
+    </div>
+    <div class="contact-row fade-4">
+      <span class="contact-label">Kaggle</span>
+      <span class="contact-val">kaggle.com/lucascarbogninpizani</span>
+      <a class="contact-action" href="https://kaggle.com/lucascarbogninpizani" target="_blank">Open →</a>
+    </div>
+    <div class="contact-row fade-5">
+      <span class="contact-label">Location</span>
+      <span class="contact-val">Davenport, Iowa — open to relocation & remote</span>
+    </div>
+  </div>
+
+  <div class="avail-box fade-5">
+    <div class="avail-left">
+      <div class="avail-title">Availability</div>
+      <div class="avail-body">Open to full-time roles in data science, machine learning engineering, and AI from May 2026.</div>
+    </div>
+    <div class="avail-pill">
+      <div class="avail-dot"></div>
+      Available May 2026
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Lucas Carbognin Pizani</span>
+  <span>Davenport, Iowa</span>
+</footer>
+</body>
+</html>
