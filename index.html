@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucas Pizani</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     /* ── HERO ── */
     .hero {
@@ -19,18 +22,29 @@
     }
 
     .hero-text {}
+
     .hero-greeting {
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--muted);
       margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+
     .hero-greeting::before {
       content: '';
-      display: inline-block; width: 28px; height: 1.5px; background: var(--muted);
+      display: inline-block;
+      width: 28px;
+      height: 1.5px;
+      background: var(--muted);
     }
-    .hero h1 { margin-bottom: 1rem; }
+
+    .hero h1 {
+      margin-bottom: 1rem;
+    }
+
     .hero-bio {
       font-size: 1.05rem;
       color: var(--muted);
@@ -50,12 +64,17 @@
       overflow: hidden;
       margin-bottom: 2rem;
     }
+
     .hstat {
       background: var(--surface);
       padding: 1.1rem 1.2rem;
       transition: background 0.15s;
     }
-    .hstat:hover { background: var(--accent-light); }
+
+    .hstat:hover {
+      background: var(--accent-light);
+    }
+
     .hstat-n {
       font-family: 'DM Serif Display', serif;
       font-size: 1.7rem;
@@ -63,63 +82,97 @@
       line-height: 1;
       margin-bottom: 0.2rem;
     }
-    .hstat-l { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+    .hstat-l {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
 
     /* ctas */
-    .hero-ctas { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .hero-ctas {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
 
     /* external links */
     .hero-links {
-      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
+
     .hero-links a {
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--muted);
-      display: flex; align-items: center; gap: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
       padding-bottom: 2px;
       border-bottom: 1px solid transparent;
       transition: color 0.15s, border-color 0.15s;
     }
-    .hero-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .hero-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
     /* ── PHOTO COLUMN ── */
-    .hero-photo-col { display: flex; flex-direction: column; gap: 1.5rem; }
+    .hero-photo-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 
     .photo-frame {
       position: relative;
       border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 4/5;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
       border: 1px solid var(--border);
     }
+
     .photo-frame img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
+
     .photo-badge {
       position: absolute;
-      bottom: 1.2rem; left: 1.2rem;
-      background: rgba(255,255,255,0.92);
+      bottom: 1.2rem;
+      left: 1.2rem;
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.6rem 0.9rem;
     }
+
     .photo-badge-name {
       font-family: 'DM Serif Display', serif;
       font-size: 1rem;
       color: var(--ink);
       line-height: 1.2;
     }
-    .photo-badge-sub { font-size: 0.72rem; color: var(--muted); }
+
+    .photo-badge-sub {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
 
     /* availability pill */
     .avail-pill {
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
       background: var(--accent2-light);
       border: 1px solid #A7F3D0;
       border-radius: 20px;
@@ -129,24 +182,42 @@
       color: #065F46;
       align-self: flex-start;
     }
+
     .avail-dot {
-      width: 7px; height: 7px; border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
       background: var(--accent2);
       animation: pulse 2s ease-in-out infinite;
     }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8)
+      }
+    }
 
     /* ── CURRENTLY STRIP ── */
     .currently {
       padding: 3rem 0;
       border-top: 1px solid var(--border);
     }
+
     .currently-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
+
     .ci {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -154,7 +225,12 @@
       padding: 1.4rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .ci:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+
+    .ci:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
     .ci-num {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -162,122 +238,145 @@
       margin-bottom: 0.5rem;
       letter-spacing: 0.06em;
     }
-    .ci-title { font-weight: 600; font-size: 0.88rem; color: var(--ink); margin-bottom: 0.35rem; }
-    .ci-body { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    .ci-title {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+
+    .ci-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-photo-col { order: -1; }
-      .photo-frame { max-height: 380px; aspect-ratio: auto; }
-      .currently-grid { grid-template-columns: 1fr; }
-      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-photo-col {
+        order: -1;
+      }
+
+      .photo-frame {
+        max-height: 380px;
+        aspect-ratio: auto;
+      }
+
+      .currently-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
-<nav>
-  <span class="nav-logo">Lucas Pizani</span>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <span class="nav-logo">Lucas Pizani</span>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="page">
-  <div class="hero">
-    <!-- LEFT: TEXT -->
-    <div class="hero-text">
-      <p class="hero-greeting fade">São Paulo → Davenport, Iowa</p>
-      <h1 class="fade-2">Hi, I'm<br><em>Lucas Pizani.</em></h1>
-      <p class="hero-bio fade-3">
-        Data scientist and mathematician. I build machine learning systems, compete in Kaggle competitions, and study at St. Ambrose University — maintaining a perfect 4.0 GPA while captaining the varsity soccer team.
-      </p>
+  <div class="page">
+    <div class="hero">
+      <!-- LEFT: TEXT -->
+      <div class="hero-text">
+        <p class="hero-greeting fade">São Paulo → Davenport, Iowa</p>
+        <h1 class="fade-2">Hi, I'm<br><em>Lucas Pizani</em></h1>
+        <p class="hero-bio fade-3">
+          ML and AI engineer with deep expertise in building neural networks, training machine learning models, and
+          developing AI agents. I compete at elite levels in Kaggle competitions, build end-to-end ML pipelines, and am
+          passionate about solving real-world problems with data-driven systems.
+        </p>
 
-      <div class="hero-stats fade-3">
-        <div class="hstat">
-          <div class="hstat-n">4.0</div>
-          <div class="hstat-l">GPA — every semester</div>
+        <div class="hero-ctas fade-4">
+          <a class="btn btn-primary" href="projects.html">View Projects</a>
+          <a class="btn btn-outline" href="contact.html">Get in Touch</a>
         </div>
-        <div class="hstat">
-          <div class="hstat-n">260K+</div>
-          <div class="hstat-l">Capabilities clustered</div>
-        </div>
-        <div class="hstat">
-          <div class="hstat-n">302<span style="font-size:1rem;color:var(--muted)">/820</span></div>
-          <div class="hstat-l">Kaggle 2024 rank</div>
+
+        <div class="hero-links fade-4">
+          <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/lcpizani" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+            </svg>
+            GitHub
+          </a>
+          <a href="https://kaggle.com/lucascarbogninpizani" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            Kaggle
+          </a>
         </div>
       </div>
 
-      <div class="hero-ctas fade-4">
-        <a class="btn btn-primary" href="projects.html">View Projects</a>
-        <a class="btn btn-outline" href="contact.html">Get in Touch</a>
-      </div>
-
-      <div class="hero-links fade-4">
-        <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-        <a href="https://github.com/lcpizani" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          GitHub
-        </a>
-        <a href="https://kaggle.com/lucascarbogninpizani" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          Kaggle
-        </a>
-        <a href="mailto:lcpizani@gmail.com">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </a>
+      <!-- RIGHT: PHOTO -->
+      <div class="hero-photo-col fade-3">
+        <div class="photo-frame">
+          <img src="profile.jpg" alt="Lucas Pizani" />
+          <div class="photo-badge">
+            <div class="photo-badge-name">Lucas Pizani</div>
+            <div class="photo-badge-sub">Data Scientist · Mathematician</div>
+          </div>
+        </div>
+        <div class="avail-pill">
+          <div class="avail-dot"></div>
+          Available May 2026
+        </div>
       </div>
     </div>
 
-    <!-- RIGHT: PHOTO -->
-    <div class="hero-photo-col fade-3">
-      <div class="photo-frame">
-        <img src="profile.jpg" alt="Lucas Pizani"/>
-        <div class="photo-badge">
-          <div class="photo-badge-name">Lucas Pizani</div>
-          <div class="photo-badge-sub">Data Scientist · Mathematician</div>
+    <!-- CURRENTLY -->
+    <div class="currently fade-5">
+      <h3>Currently</h3>
+      <div class="currently-grid">
+        <div class="ci">
+          <div class="ci-num">01 ACTIVE</div>
+          <div class="ci-title">Karrera AI</div>
+          <div class="ci-body">ML intern engineering embedding pipelines and neural classifiers across 260K+
+            professional capabilities and 312 categories.</div>
         </div>
-      </div>
-      <div class="avail-pill">
-        <div class="avail-dot"></div>
-        Available May 2026
-      </div>
-    </div>
-  </div>
-
-  <!-- CURRENTLY -->
-  <div class="currently fade-5">
-    <h3>Currently working on</h3>
-    <div class="currently-grid">
-      <div class="ci">
-        <div class="ci-num">01 · IN PROGRESS</div>
-        <div class="ci-title">ML Intern at Karrera AI</div>
-        <div class="ci-body">Building embedding pipelines and 312-category neural classifiers on 260K+ professional capabilities.</div>
-      </div>
-      <div class="ci">
-        <div class="ci-num">02 · IN PROGRESS</div>
-        <div class="ci-title">March Mania 2026</div>
-        <div class="ci-body">Third year in Kaggle's NCAA prediction challenge — refining Elo models and ensemble architecture.</div>
-      </div>
-      <div class="ci">
-        <div class="ci-num">03 · IN PROGRESS</div>
-        <div class="ci-title">Pi515 AI Agent</div>
-        <div class="ci-body">Building an AI agent for Iowa's Day of Innovation — applying AI to a real societal challenge.</div>
+        <div class="ci">
+          <div class="ci-num">02 COMPETITION</div>
+          <div class="ci-title">March Mania 2026</div>
+          <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Ranked top 37% in 2024-2025
+            using BigQuery, Monte Carlo, Elo models.</div>
+        </div>
+        <div class="ci">
+          <div class="ci-num">03 RESEARCH</div>
+          <div class="ci-title">Pi515 Innovation Challenge</div>
+          <div class="ci-body">Developing AI agents and multi-modal systems for Iowa Day of Innovation addressing
+            real-world problems.</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<footer>
-  <span>© 2026 Lucas Carbognin Pizani</span>
-  <span>Davenport, Iowa</span>
-</footer>
+  <footer>
+    <span>© 2026 Lucas Carbognin Pizani</span>
+    <span>Davenport, Iowa</span>
+  </footer>
 </body>
+
 </html>

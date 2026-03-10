@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience — Lucas Pizani</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    .exp-list { display: flex; flex-direction: column; }
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
+
     .exp-item {
       display: grid;
       grid-template-columns: 150px 1fr;
@@ -17,8 +24,14 @@
       border-bottom: 1px solid var(--border);
       transition: padding-left 0.2s;
     }
-    .exp-item:first-child { border-top: 1px solid var(--border); }
-    .exp-item:hover { padding-left: 0.4rem; }
+
+    .exp-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .exp-item:hover {
+      padding-left: 0.4rem;
+    }
 
     .exp-date {
       font-family: 'JetBrains Mono', monospace;
@@ -27,196 +40,280 @@
       line-height: 1.7;
       padding-top: 0.25rem;
     }
+
     .exp-date .label {
-      font-size: 0.62rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--accent); display: block; margin-bottom: 0.3rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.3rem;
     }
 
-    .exp-role { font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.15rem; }
-    .exp-company { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-bottom: 0.7rem; }
-    .exp-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
-    .exp-desc ul { padding-left: 1.1rem; }
-    .exp-desc li { margin-bottom: 0.3rem; }
-    .exp-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .exp-company {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+    }
+
+    .exp-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .exp-desc ul {
+      padding-left: 1.1rem;
+    }
+
+    .exp-desc li {
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
 
     /* skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
     .skill-group {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.3rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.3rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .skill-group:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-    .sg-label {
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.8rem;
+
+    .skill-group:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
     }
-    .sg-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .sg-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .sg-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
     .sg-pill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem; padding: 0.25rem 0.6rem;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--ink);
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--ink);
       transition: background 0.15s, border-color 0.15s;
     }
-    .sg-pill:hover { background: var(--accent-light); border-color: #BFDBFE; color: var(--accent); }
+
+    .sg-pill:hover {
+      background: var(--accent-light);
+      border-color: #BFDBFE;
+      color: var(--accent);
+    }
 
     /* coursework */
     .course-grid {
-      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.4rem 1.5rem;
       margin-top: 1rem;
     }
+
     .course {
-      font-size: 0.82rem; color: var(--muted);
-      padding: 0.35rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
     }
+
     .course span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.62rem; color: #BFBDB8; margin-right: 0.4rem;
+      font-size: 0.62rem;
+      color: #BFBDB8;
+      margin-right: 0.4rem;
     }
 
     @media (max-width: 700px) {
-      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .course-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-<nav>
-  <span class="nav-logo">Lucas Pizani</span>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html" class="active">Experience</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <span class="nav-logo">Lucas Pizani</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="page">
-  <p class="eyebrow fade">Background</p>
-  <h1 class="fade-2" style="margin-bottom:3rem;">Experience.</h1>
+  <div class="page">
+    <p class="eyebrow fade">Background</p>
+    <h1 class="fade-2" style="margin-bottom:3rem;">Experience</h1>
 
-  <h3 class="fade-2">Work</h3>
-  <div class="exp-list">
-    <div class="exp-item fade-3">
-      <div class="exp-date"><span class="label">Current</span>Jun 2025 – Present<br><br>Remote<br>São Paulo, Brazil</div>
-      <div>
-        <div class="exp-role">Machine Learning & Data Science Intern</div>
-        <div class="exp-company">Karrera AI</div>
-        <div class="exp-desc">
-          <ul>
-            <li>Extracted and structured a large-scale capability database from unstructured sources using AI and sentence transformers.</li>
-            <li>Applied MinHash + HDBSCAN clustering on 260K+ entries — reducing redundancy by 70%.</li>
-            <li>Trained neural network classifiers on tens of thousands of labeled examples across 312 categories.</li>
-            <li>Built scalable Python pipelines for ingestion, preprocessing, and semantic search using ChromaDB and REST APIs.</li>
-          </ul>
+    <h3 class="fade-2">Work</h3>
+    <div class="exp-list">
+      <div class="exp-item fade-3">
+        <div class="exp-date"><span class="label">Current</span>Jun 2025 – Present<br><br>Remote<br>São Paulo, Brazil
         </div>
-        <div class="exp-tags"><span class="tag">Python</span><span class="tag">SBERT</span><span class="tag">HDBSCAN</span><span class="tag">ChromaDB</span><span class="tag">PyTorch</span></div>
-      </div>
-    </div>
-
-    <div class="exp-item fade-3">
-      <div class="exp-date"><span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA</div>
-      <div>
-        <div class="exp-role">AI & Data Science Intern</div>
-        <div class="exp-company">Noon App</div>
-        <div class="exp-desc">
-          <ul>
-            <li>Co-developed the UP platform — a decentralized professional identity system.</li>
-            <li>Engineered systems to collect and store data for a personal AI assistant.</li>
-            <li>Built integrated Knowledge and Social Graphs to enhance AI understanding of skills and career paths.</li>
-          </ul>
-        </div>
-        <div class="exp-tags"><span class="tag">Knowledge Graphs</span><span class="tag">AI Assistant</span><span class="tag">Python</span></div>
-      </div>
-    </div>
-
-    <div class="exp-item fade-4">
-      <div class="exp-date"><span class="label">Part-time</span>Aug 2023 – Present<br><br>Davenport, IA</div>
-      <div>
-        <div class="exp-role">Student Worker</div>
-        <div class="exp-company">Sodexo · St. Ambrose University</div>
-        <div class="exp-desc">Customer service and team collaboration in campus dining operations.</div>
-      </div>
-    </div>
-
-    <div class="exp-item fade-4">
-      <div class="exp-date"><span class="label">Volunteer</span>2020 – 2022<br><br>São Paulo, Brazil</div>
-      <div>
-        <div class="exp-role">Member</div>
-        <div class="exp-company">Seja Futuro NGO</div>
-        <div class="exp-desc">Digital community focused on income distribution and critical thinking; connected youth to societal and technological challenges in Brazil.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <h3 class="fade-4">Education</h3>
-  <div class="exp-list">
-    <div class="exp-item fade-4">
-      <div class="exp-date"><span class="label">Degree</span>Aug 2022 – May 2026<br><br>Davenport, IA<br><br>GPA: 4.0</div>
-      <div>
-        <div class="exp-role">B.S. Data Science & Analytics · B.S. Mathematics</div>
-        <div class="exp-company">St. Ambrose University</div>
-        <div class="exp-desc">
-          Double major with double minor in Computer Science and Statistics. Academic and Athletic Scholarships, 2022–present. Dean's List every semester.
-          <div class="course-grid">
-            <div class="course"><span>MATH</span>Real Analysis</div>
-            <div class="course"><span>MATH</span>Abstract Algebra</div>
-            <div class="course"><span>MATH</span>Advanced Data Science</div>
-            <div class="course"><span>MATH</span>Math Programming</div>
-            <div class="course"><span>MATH</span>Statistical Modeling</div>
-            <div class="course"><span>MATH</span>Linear Algebra</div>
-            <div class="course"><span>CSCI</span>Data Structures</div>
-            <div class="course"><span>CSCI</span>Database Systems</div>
-            <div class="course"><span>CSCI</span>Networks & Comm.</div>
-            <div class="course"><span>CSCI</span>Discrete Structures</div>
-            <div class="course"><span>MATH</span>Differential Equations</div>
-            <div class="course"><span>MATH</span>Topics in Mathematics</div>
+        <div>
+          <div class="exp-role">Machine Learning & Data Science Intern</div>
+          <div class="exp-company">Karrera AI</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Extracted and structured high-volume capability dataset from unstructured sources using AI and
+                sentence transformers (SBERT).</li>
+              <li>Applied MinHash + HDBSCAN clustering to 260K+ entries, reducing data redundancy by 70% while
+                preserving semantic relationships.</li>
+              <li>Trained neural network classifiers using PyTorch across 312 professional categories with strong
+                validation metrics.</li>
+              <li>Designed and deployed scalable Python backends handling data ingestion, preprocessing, vector search
+                with ChromaDB, and REST API endpoints serving production queries.</li>
+            </ul>
           </div>
+          <div class="exp-tags"><span class="tag">Python</span><span class="tag">SBERT</span><span
+              class="tag">HDBSCAN</span><span class="tag">ChromaDB</span><span class="tag">PyTorch</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-3">
+        <div class="exp-date"><span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA</div>
+        <div>
+          <div class="exp-role">AI & Data Science Intern</div>
+          <div class="exp-company">Noon App</div>
+          <div class="exp-desc">
+            <ul>
+              <li>Co-designed and developed UP, a decentralized professional identity platform focusing on semantic
+                understanding of skills and careers.</li>
+              <li>Engineered Knowledge Graphs and Social Graphs to structure professional data and enable intelligent
+                assistant functionality.</li>
+              <li>Built data collection and storage systems to support AI assistant training and personalization.</li>
+            </ul>
+          </div>
+          <div class="exp-tags"><span class="tag">Knowledge Graphs</span><span class="tag">AI Assistant</span><span
+              class="tag">Python</span></div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-4">
+        <div class="exp-date"><span class="label">Part-time</span>Aug 2023 – Present<br><br>Davenport, IA</div>
+        <div>
+          <div class="exp-role">Student Worker</div>
+          <div class="exp-company">St. Ambrose University</div>
+          <div class="exp-desc">Campus operations and customer service.</div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-4">
+        <div class="exp-date"><span class="label">Volunteer</span>2020 – 2022<br><br>São Paulo, Brazil</div>
+        <div>
+          <div class="exp-role">Member</div>
+          <div class="exp-company">Seja Futuro NGO</div>
+          <div class="exp-desc">Youth-focused digital initiative connecting emerging technologists with civic and
+            societal challenges in Brazil.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="fade-4">Education</h3>
+    <div class="exp-list">
+      <div class="exp-item fade-4">
+        <div class="exp-date"><span class="label">Degree</span>Aug 2022 – May 2026<br><br>Davenport, IA</div>
+        <div>
+          <div class="exp-role">B.S. Data Science & Analytics · B.S. Mathematics</div>
+          <div class="exp-company">St. Ambrose University</div>
+          <div class="exp-desc">Double major with minors in Computer Science and Statistics. Recipient of Academic and
+            Athletic Scholarships. Focus on machine learning, statistical modeling, and applied mathematics with
+            emphasis on production systems and scalability.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="fade-5">Skills</h3>
+    <div class="skills-grid fade-5">
+      <div class="skill-group">
+        <div class="sg-label">Languages</div>
+        <div class="sg-pills">
+          <span class="sg-pill">Python</span><span class="sg-pill">SQL</span><span class="sg-pill">R</span><span
+            class="sg-pill">Java</span><span class="sg-pill">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">ML / AI</div>
+        <div class="sg-pills">
+          <span class="sg-pill">PyTorch</span><span class="sg-pill">SBERT</span><span
+            class="sg-pill">XGBoost</span><span class="sg-pill">scikit-learn</span><span
+            class="sg-pill">HDBSCAN</span><span class="sg-pill">Ollama</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Data & Storage</div>
+        <div class="sg-pills">
+          <span class="sg-pill">ChromaDB</span><span class="sg-pill">Pandas</span><span
+            class="sg-pill">NumPy</span><span class="sg-pill">BigQuery</span><span class="sg-pill">NetworkX</span><span
+            class="sg-pill">Looker Studio</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Cloud & Tools</div>
+        <div class="sg-pills">
+          <span class="sg-pill">AWS</span><span class="sg-pill">GCP</span><span class="sg-pill">Docker</span><span
+            class="sg-pill">Flask</span><span class="sg-pill">GitHub</span><span class="sg-pill">Postman</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="divider"></div>
-
-  <h3 class="fade-5">Skills</h3>
-  <div class="skills-grid fade-5">
-    <div class="skill-group">
-      <div class="sg-label">Languages</div>
-      <div class="sg-pills">
-        <span class="sg-pill">Python</span><span class="sg-pill">SQL</span><span class="sg-pill">R</span><span class="sg-pill">Java</span><span class="sg-pill">JavaScript</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-label">ML / AI</div>
-      <div class="sg-pills">
-        <span class="sg-pill">PyTorch</span><span class="sg-pill">SBERT</span><span class="sg-pill">XGBoost</span><span class="sg-pill">scikit-learn</span><span class="sg-pill">HDBSCAN</span><span class="sg-pill">Ollama</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-label">Data & Storage</div>
-      <div class="sg-pills">
-        <span class="sg-pill">ChromaDB</span><span class="sg-pill">Pandas</span><span class="sg-pill">NumPy</span><span class="sg-pill">BigQuery</span><span class="sg-pill">NetworkX</span><span class="sg-pill">Looker Studio</span>
-      </div>
-    </div>
-    <div class="skill-group">
-      <div class="sg-label">Cloud & Tools</div>
-      <div class="sg-pills">
-        <span class="sg-pill">AWS</span><span class="sg-pill">GCP</span><span class="sg-pill">Docker</span><span class="sg-pill">Flask</span><span class="sg-pill">GitHub</span><span class="sg-pill">Postman</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <span>© 2026 Lucas Carbognin Pizani</span>
-  <span>Davenport, Iowa</span>
-</footer>
+  <footer>
+    <span>© 2026 Lucas Carbognin Pizani</span>
+    <span>Davenport, Iowa</span>
+  </footer>
 </body>
+
 </html>

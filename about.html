@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Lucas Pizani</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     .about-grid {
       display: grid;
@@ -15,62 +18,119 @@
       align-items: start;
       margin-bottom: 4rem;
     }
+
     .about-photo {
-      position: sticky; top: 90px;
+      position: sticky;
+      top: 90px;
     }
+
     .about-photo img {
       width: 100%;
       border-radius: 14px;
       border: 1px solid var(--border);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
       display: block;
       margin-bottom: 1rem;
     }
-    .about-photo-meta { font-size: 0.78rem; color: var(--muted); line-height: 1.7; }
-    .about-photo-meta strong { color: var(--ink); font-weight: 500; display: block; margin-bottom: 0.2rem; }
 
-    .about-text h2 { margin-bottom: 1.2rem; }
+    .about-photo-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .about-photo-meta strong {
+      color: var(--ink);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .about-text h2 {
+      margin-bottom: 1.2rem;
+    }
+
     .about-text .lead {
       font-size: 1.1rem;
       color: var(--ink);
       line-height: 1.8;
       margin-bottom: 1.2rem;
     }
-    .about-text p { margin-bottom: 1rem; }
+
+    .about-text p {
+      margin-bottom: 1rem;
+    }
 
     /* info list */
-    .info-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+
     .info-row {
-      display: flex; gap: 2rem;
+      display: flex;
+      gap: 2rem;
       padding: 0.8rem 0;
       border-bottom: 1px solid var(--border);
       align-items: baseline;
     }
+
     .info-label {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--muted); width: 130px; flex-shrink: 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      width: 130px;
+      flex-shrink: 0;
     }
-    .info-val { font-size: 0.88rem; color: var(--ink); }
+
+    .info-val {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
 
     /* honors */
-    .honors-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+    .honors-list {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--border);
+    }
+
     .honor-row {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 1rem; padding: 0.75rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.75rem 0;
       border-bottom: 1px solid var(--border);
       transition: background 0.15s, padding-left 0.15s;
     }
-    .honor-row:hover { padding-left: 0.5rem; }
-    .honor-name { font-size: 0.88rem; color: var(--ink); }
+
+    .honor-row:hover {
+      padding-left: 0.5rem;
+    }
+
+    .honor-name {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
     .honor-year {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem; color: var(--muted); white-space: nowrap;
+      font-size: 0.68rem;
+      color: var(--muted);
+      white-space: nowrap;
     }
 
     /* beyond */
     .beyond-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
+
     .beyond-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -78,113 +138,178 @@
       padding: 1.4rem;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .beyond-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-    .bc-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
-    .bc-title { font-weight: 600; font-size: 0.88rem; color: var(--ink); margin-bottom: 0.4rem; }
-    .bc-body { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+    .beyond-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    }
+
+    .bc-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .bc-title {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .bc-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
 
     @media (max-width: 900px) {
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .about-photo { position: static; }
-      .about-photo img { max-height: 360px; object-fit: cover; object-position: top; }
-      .beyond-grid { grid-template-columns: 1fr; }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-photo {
+        position: static;
+      }
+
+      .about-photo img {
+        max-height: 360px;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .beyond-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-<nav>
-  <span class="nav-logo">Lucas Pizani</span>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <span class="nav-logo">Lucas Pizani</span>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="page">
-  <p class="eyebrow fade">About</p>
-  <h1 class="fade-2" style="margin-bottom:3rem;">Who I am.</h1>
+  <div class="page">
+    <p class="eyebrow fade">About</p>
+    <h1 class="fade-2" style="margin-bottom:3rem;">Who I am</h1>
 
-  <div class="about-grid">
-    <div class="about-photo fade-3">
-      <img src="profile.jpg" alt="Lucas Pizani"/>
-      <div class="about-photo-meta">
-        <strong>Lucas Carbognin Pizani</strong>
-        St. Ambrose University · Senior<br>
-        Davenport, Iowa<br>
-        Originally from São Paulo, Brazil 🇧🇷
+    <div class="about-grid">
+      <div class="about-photo fade-3">
+        <img src="profile.jpg" alt="Lucas Pizani" />
+        <div class="about-photo-meta">
+          <strong>Lucas Carbognin Pizani</strong>
+          St. Ambrose University · Senior<br>
+          Davenport, Iowa<br>
+          Originally from São Paulo, Brazil 🇧🇷
+        </div>
+      </div>
+
+      <div class="about-text fade-3">
+        <h2>ML engineer building production systems.</h2>
+        <p class="lead">I'm a senior at St. Ambrose University (Data Science & Analytics + Mathematics) graduating May
+          2026. I specialize in building end-to-end machine learning systems from data pipelines to model deployment,
+          with hands-on experience in neural networks, gradient boosting, and modern AI architectures.</p>
+        <p>At Karrera AI, I engineered a production ML pipeline that processed 260K+ professional capabilities using
+          sentence transformers and MinHash clustering, reducing redundancy by 70% while training neural classifiers
+          across 312 categories. I designed scalable Python backends with ChromaDB for semantic search and optimized the
+          entire system for real-world performance at scale.</p>
+        <p>I compete seriously in Kaggle's March Machine Learning Mania, finishing in the top 37% in 2024 and 2025.
+          Beyond leaderboard rankings, I build practical systems including BigQuery feature pipelines, Monte Carlo
+          simulations for uncertainty quantification, ensemble voting strategies, and Elo rating systems. Each
+          competition represents an opportunity to ship production-quality code under constraints.</p>
+        <p>I'm currently learning AI agents and multi-modal systems, with a real project in the Pi515 AI challenge. I
+          care deeply about understanding the math behind models, writing clean code that scales, and solving problems
+          that matter. I've shipped features end-to-end in fast-paced environments with international teams.</p>
+        <p>I'm fluent in English and Portuguese, conversational in Spanish. Beyond work, I lead a varsity soccer team as
+          captain — if you want someone who can balance technical depth with team dynamics, let's talk.</p>
+
+        <div class="divider"></div>
+
+        <h3>Details</h3>
+        <div class="info-list fade-4">
+          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Davenport, Iowa,
+              USA</span></div>
+          <div class="info-row"><span class="info-label">From</span><span class="info-val">São Paulo, SP, Brazil</span>
+          </div>
+          <div class="info-row"><span class="info-label">Degree</span><span class="info-val">B.S. Data Science &
+              Analytics + B.S. Mathematics, May 2026</span></div>
+          <div class="info-row"><span class="info-label">Minors</span><span class="info-val">Computer Science ·
+              Statistics</span></div>
+          <div class="info-row"><span class="info-label">Languages</span><span class="info-val">English (fluent) ·
+              Portuguese (native) · Spanish (conversational)</span></div>
+          <div class="info-row"><span class="info-label">Expertise</span><span class="info-val">Machine Learning ·
+              Neural Networks · Python · Feature Engineering · Kaggle Competitor</span></div>
+        </div>
       </div>
     </div>
 
-    <div class="about-text fade-3">
-      <h2>Data scientist who loves hard problems.</h2>
-      <p class="lead">I'm a senior at St. Ambrose University double-majoring in Data Science & Analytics and Mathematics, with minors in Computer Science and Statistics. I graduate in May 2026, maintaining a 4.0 GPA every semester.</p>
-      <p>My work sits at the intersection of machine learning, applied mathematics, and software engineering. At Karrera AI, I built embedding-based pipelines that clustered 260,000+ professional capabilities and trained neural classifiers across 312 categories. Before that, I helped build a decentralized professional identity platform at Noon App in Brazil.</p>
-      <p>I've competed in Kaggle's March Machine Learning Mania for three consecutive years — finishing in the top 37% in both 2024 and 2025 — and I'm working on my third submission now. The competitions push me to think practically: BigQuery pipelines, ensemble models, Monte Carlo simulation, Elo systems.</p>
-      <p>I grew up in São Paulo, where I played drums in a band with over 30 live performances, competed in the Brazilian Math Olympiad, and joined a youth NGO focused on technology and civic engagement. I moved to Iowa on an athletic scholarship and have been a starting defender and captain of the men's varsity soccer team since freshman year.</p>
-      <p>I'm fluent in English and Portuguese, conversational in Spanish, and always looking for interesting problems to work on.</p>
+    <div class="divider"></div>
 
-      <div class="divider"></div>
+    <h3 class="fade-4">Honors & Awards</h3>
+    <div class="honors-list fade-4">
+      <div class="honor-row"><span class="honor-name">Pi Mu Epsilon Mathematics Honor Society</span><span
+          class="honor-year">2025-present</span></div>
+      <div class="honor-row"><span class="honor-name">Phi Eta Sigma Academic Honor Society</span><span
+          class="honor-year">2023-present</span></div>
+      <div class="honor-row"><span class="honor-name">Dean's List, St. Ambrose University</span><span
+          class="honor-year">2022-present</span></div>
+      <div class="honor-row"><span class="honor-name">CCAC Men's Soccer All-Academic Team</span><span
+          class="honor-year">2023 & 2024</span></div>
+      <div class="honor-row"><span class="honor-name">Academic All-District Soccer Team</span><span
+          class="honor-year">2023 & 2024</span></div>
+      <div class="honor-row"><span class="honor-name">Daktronics Scholar-Athlete, NAIA</span><span
+          class="honor-year">2023 & 2024</span></div>
+      <div class="honor-row"><span class="honor-name">Silver Medal — Kangourou sans Frontières (AKSF)</span><span
+          class="honor-year">2021</span></div>
+      <div class="honor-row"><span class="honor-name">Bronze Medal — Olympiad Mathématiques sans Frontières</span><span
+          class="honor-year">2017</span></div>
+      <div class="honor-row"><span class="honor-name">Bronze Medal — 13th OBMEP Brazilian Math Olympiad</span><span
+          class="honor-year">2017</span></div>
+    </div>
 
-      <h3>Details</h3>
-      <div class="info-list fade-4">
-        <div class="info-row"><span class="info-label">Location</span><span class="info-val">Davenport, Iowa, USA</span></div>
-        <div class="info-row"><span class="info-label">From</span><span class="info-val">São Paulo, SP, Brazil</span></div>
-        <div class="info-row"><span class="info-label">Degree</span><span class="info-val">B.S. Data Science & Analytics + B.S. Mathematics — May 2026</span></div>
-        <div class="info-row"><span class="info-label">Minors</span><span class="info-val">Computer Science · Statistics</span></div>
-        <div class="info-row"><span class="info-label">GPA</span><span class="info-val">4.0 / 4.0 — Dean's List every semester</span></div>
-        <div class="info-row"><span class="info-label">Languages</span><span class="info-val">English (fluent) · Portuguese (native) · Spanish (conversational)</span></div>
+    <div class="divider"></div>
+
+    <h3 class="fade-5">Beyond the work</h3>
+    <div class="beyond-grid fade-5">
+      <div class="beyond-card">
+        <div class="bc-icon">⚽</div>
+        <div class="bc-title">Varsity Soccer Captain</div>
+        <div class="bc-body">Starting defender and team captain at St. Ambrose. NAIA Scholar-Athlete and CCAC
+          All-Academic both 2023 and 2024. Arrived on an athletic scholarship from São Paulo.</div>
+      </div>
+      <div class="beyond-card">
+        <div class="bc-icon">🥁</div>
+        <div class="bc-title">Drummer</div>
+        <div class="bc-body">Drummer for Quadriciclo — 30+ live performances in São Paulo, including a TV appearance on
+          The Live Show featuring Nando Reis.</div>
+      </div>
+      <div class="beyond-card">
+        <div class="bc-icon">📊</div>
+        <div class="bc-title">Kaggle Competitor</div>
+        <div class="bc-body">Three consecutive years in March Machine Learning Mania. Finished top 37% in both 2024 and
+          2025, building Monte Carlo simulations, BigQuery pipelines, and ensemble models.</div>
+      </div>
+      <div class="beyond-card">
+        <div class="bc-icon">🌍</div>
+        <div class="bc-title">Seja Futuro NGO</div>
+        <div class="bc-body">Member of a Brazilian digital community focused on income distribution and critical
+          thinking — connecting youth to technology and societal challenges (2020–2022).</div>
       </div>
     </div>
   </div>
 
-  <div class="divider"></div>
-
-  <h3 class="fade-4">Honors & Awards</h3>
-  <div class="honors-list fade-4">
-    <div class="honor-row"><span class="honor-name">Pi Mu Epsilon — Mathematics Honor Society</span><span class="honor-year">2025–present</span></div>
-    <div class="honor-row"><span class="honor-name">Phi Eta Sigma — Academic Honor Society</span><span class="honor-year">2023–present</span></div>
-    <div class="honor-row"><span class="honor-name">Dean's List — St. Ambrose University</span><span class="honor-year">2022–present</span></div>
-    <div class="honor-row"><span class="honor-name">CCAC Men's Soccer All-Academic Team</span><span class="honor-year">2023 & 2024</span></div>
-    <div class="honor-row"><span class="honor-name">Academic All-District Soccer Team — CSC</span><span class="honor-year">2023 & 2024</span></div>
-    <div class="honor-row"><span class="honor-name">Daktronics Scholar-Athlete — NAIA</span><span class="honor-year">2023 & 2024</span></div>
-    <div class="honor-row"><span class="honor-name">Silver Medal — Kangourou sans Frontières (AKSF)</span><span class="honor-year">2021</span></div>
-    <div class="honor-row"><span class="honor-name">Bronze Medal — Olympiad Mathématiques sans Frontières</span><span class="honor-year">2017</span></div>
-    <div class="honor-row"><span class="honor-name">Bronze Medal — 13th OBMEP Brazilian Math Olympiad</span><span class="honor-year">2017</span></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <h3 class="fade-5">Beyond the work</h3>
-  <div class="beyond-grid fade-5">
-    <div class="beyond-card">
-      <div class="bc-icon">⚽</div>
-      <div class="bc-title">Varsity Soccer Captain</div>
-      <div class="bc-body">Starting defender and team captain at St. Ambrose. NAIA Scholar-Athlete and CCAC All-Academic both 2023 and 2024. Arrived on an athletic scholarship from São Paulo.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="bc-icon">🥁</div>
-      <div class="bc-title">Drummer</div>
-      <div class="bc-body">Drummer for Quadriciclo — 30+ live performances in São Paulo, including a TV appearance on The Live Show featuring Nando Reis.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="bc-icon">📊</div>
-      <div class="bc-title">Kaggle Competitor</div>
-      <div class="bc-body">Three consecutive years in March Machine Learning Mania. Finished 302nd out of 820 teams in 2024, built Monte Carlo simulations, BigQuery pipelines, and ensemble models.</div>
-    </div>
-    <div class="beyond-card">
-      <div class="bc-icon">🌍</div>
-      <div class="bc-title">Seja Futuro NGO</div>
-      <div class="bc-body">Member of a Brazilian digital community focused on income distribution and critical thinking — connecting youth to technology and societal challenges (2020–2022).</div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <span>© 2026 Lucas Carbognin Pizani</span>
-  <span>Davenport, Iowa</span>
-</footer>
+  <footer>
+    <span>© 2026 Lucas Carbognin Pizani</span>
+    <span>Davenport, Iowa</span>
+  </footer>
 </body>
+
 </html>
