@@ -160,6 +160,12 @@
       margin-right: 0.4rem;
     }
 
+    .exp-date .logo-chip {
+      --chip: 50px;
+      display: flex;
+      margin-bottom: 0.85rem;
+    }
+
     @media (max-width: 700px) {
       .exp-item {
         grid-template-columns: 1fr;
@@ -196,7 +202,9 @@
     <h3 class="fade-2">Work</h3>
     <div class="exp-list">
       <div class="exp-item fade-3">
-        <div class="exp-date"><span class="label">Current</span>Jun 2025 – Present<br><br>Remote<br>São Paulo, Brazil
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI" onerror="this.remove()"></span>
+          <span class="label">Current</span>Jun 2025 – Present<br><br>Remote<br>São Paulo, Brazil
         </div>
         <div>
           <div class="exp-role">Machine Learning & Data Science Intern</div>
@@ -219,7 +227,10 @@
       </div>
 
       <div class="exp-item fade-3">
-        <div class="exp-date"><span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA</div>
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()"></span>
+          <span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA
+        </div>
         <div>
           <div class="exp-role">AI & Data Science Intern</div>
           <div class="exp-company">Noon App</div>
@@ -238,16 +249,24 @@
       </div>
 
       <div class="exp-item fade-4">
-        <div class="exp-date"><span class="label">Part-time</span>Aug 2023 – Present<br><br>Davenport, IA</div>
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="S"><img src="assets/sodexo.png" alt="Sodexo" onerror="this.remove()"></span>
+          <span class="label">Part-time</span>Aug 2023 – Present<br><br>Davenport, IA
+        </div>
         <div>
-          <div class="exp-role">Student Worker</div>
-          <div class="exp-company">St. Ambrose University</div>
-          <div class="exp-desc">Campus operations and customer service.</div>
+          <div class="exp-role">Student Worker · Dining Services</div>
+          <div class="exp-company">Sodexo · St. Ambrose University</div>
+          <div class="exp-desc">Dining and food service operations on the St. Ambrose University campus —
+            customer service, point-of-sale, and front-of-house operations while balancing a full course load and
+            varsity athletics.</div>
         </div>
       </div>
 
       <div class="exp-item fade-4">
-        <div class="exp-date"><span class="label">Volunteer</span>2020 – 2022<br><br>São Paulo, Brazil</div>
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="S"><img src="assets/sejafuturo.jpeg" alt="Seja Futuro" onerror="this.remove()"></span>
+          <span class="label">Volunteer</span>2020 – 2022<br><br>São Paulo, Brazil
+        </div>
         <div>
           <div class="exp-role">Member</div>
           <div class="exp-company">Seja Futuro NGO</div>
@@ -262,7 +281,22 @@
     <h3 class="fade-4">Education</h3>
     <div class="exp-list">
       <div class="exp-item fade-4">
-        <div class="exp-date"><span class="label">Degree</span>Aug 2022 – May 2026<br><br>Davenport, IA</div>
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
+          <span class="label">Upcoming</span>Fall 2026 – 2028<br><br>New York, NY
+        </div>
+        <div>
+          <div class="exp-role">M.S. Data Science</div>
+          <div class="exp-company">New York University · Center for Data Science</div>
+          <div class="exp-desc">Master's program at NYU's Center for Data Science.</div>
+        </div>
+      </div>
+
+      <div class="exp-item fade-4">
+        <div class="exp-date">
+          <span class="logo-chip" data-letter="S"><img src="assets/sau.png" alt="St. Ambrose" onerror="this.remove()"></span>
+          <span class="label">Degree</span>Aug 2022 – May 2026<br><br>Davenport, IA
+        </div>
         <div>
           <div class="exp-role">B.S. Data Science & Analytics · B.S. Mathematics</div>
           <div class="exp-company">St. Ambrose University</div>
@@ -312,7 +346,7 @@
 
   <footer>
     <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa</span>
+    <span>Davenport, Iowa → New York City</span>
   </footer>
 </body>
 

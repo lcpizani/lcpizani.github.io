@@ -21,8 +21,6 @@
       padding-top: 3rem;
     }
 
-    .hero-text {}
-
     .hero-greeting {
       font-size: 0.8rem;
       font-weight: 500;
@@ -205,6 +203,16 @@
       }
     }
 
+    .avail-pill.nyu {
+      background: #F5F0FA;
+      border-color: #C9A8E8;
+      color: #57068C;
+    }
+
+    .avail-pill.nyu .avail-dot {
+      background: #57068C;
+    }
+
     /* ── CURRENTLY STRIP ── */
     .currently {
       padding: 3rem 0;
@@ -229,6 +237,12 @@
     .ci:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .ci .logo-chip {
+      --chip: 46px;
+      display: flex;
+      margin-bottom: 1rem;
     }
 
     .ci-num {
@@ -294,12 +308,13 @@
     <div class="hero">
       <!-- LEFT: TEXT -->
       <div class="hero-text">
-        <p class="hero-greeting fade">São Paulo → Davenport, Iowa</p>
+        <p class="hero-greeting fade">São Paulo → Iowa → New York City</p>
         <h1 class="fade-2">Hi, I'm<br><em>Lucas Pizani</em></h1>
         <p class="hero-bio fade-3">
           ML and AI engineer with deep expertise in building neural networks, training machine learning models, and
           developing AI agents. I compete at elite levels in Kaggle competitions, build end-to-end ML pipelines, and am
-          passionate about solving real-world problems with data-driven systems.
+          passionate about solving real-world problems with data-driven systems. Graduating May 2026 and relocating to
+          New York City to pursue an M.S. in Data Science at NYU.
         </p>
 
         <div class="hero-ctas fade-4">
@@ -340,9 +355,9 @@
             <div class="photo-badge-sub">Data Scientist · Mathematician</div>
           </div>
         </div>
-        <div class="avail-pill">
+        <div class="avail-pill nyu">
           <div class="avail-dot"></div>
-          Available May 2026
+          Relocating to NYC · NYU MS Fall 2026
         </div>
       </div>
     </div>
@@ -352,22 +367,25 @@
       <h3>Currently</h3>
       <div class="currently-grid">
         <div class="ci">
-          <div class="ci-num">01 ACTIVE</div>
+          <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
+          <div class="ci-num">01 INCOMING · FALL 2026</div>
+          <div class="ci-title">NYU · MS Data Science</div>
+          <div class="ci-body">Relocating to New York City to pursue a Master's in Data Science at NYU's Center for
+            Data Science. Starting Fall 2026.</div>
+        </div>
+        <div class="ci">
+          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI" onerror="this.remove()"></span>
+          <div class="ci-num">02 ACTIVE</div>
           <div class="ci-title">Karrera AI</div>
           <div class="ci-body">ML intern engineering embedding pipelines and neural classifiers across 260K+
             professional capabilities and 312 categories.</div>
         </div>
         <div class="ci">
-          <div class="ci-num">02 COMPETITION</div>
+          <span class="logo-chip" data-letter="K"><img src="assets/kaggle.jpeg" alt="Kaggle" onerror="this.remove()"></span>
+          <div class="ci-num">03 COMPETITION</div>
           <div class="ci-title">March Mania 2026</div>
           <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Ranked top 37% in 2024-2025
             using BigQuery, Monte Carlo, Elo models.</div>
-        </div>
-        <div class="ci">
-          <div class="ci-num">03 RESEARCH</div>
-          <div class="ci-title">Pi515 Innovation Challenge</div>
-          <div class="ci-body">Developing AI agents and multi-modal systems for Iowa Day of Innovation addressing
-            real-world problems.</div>
         </div>
       </div>
     </div>
@@ -375,7 +393,7 @@
 
   <footer>
     <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa</span>
+    <span>Davenport, Iowa → New York City</span>
   </footer>
 </body>
 

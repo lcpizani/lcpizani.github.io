@@ -43,7 +43,23 @@
       color: var(--ink);
       font-weight: 500;
       display: block;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .meta-org {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-org .logo-chip {
+      --chip: 24px;
+    }
+
+    .info-val .logo-chip {
+      --chip: 22px;
+      margin-right: 0.4rem;
     }
 
     .about-text h2 {
@@ -206,41 +222,51 @@
         <img src="profile.jpg" alt="Lucas Pizani" />
         <div class="about-photo-meta">
           <strong>Lucas Carbognin Pizani</strong>
-          St. Ambrose University · Senior<br>
-          Davenport, Iowa<br>
+          <div class="meta-org">
+            <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
+            <span>NYU · MS Data Science (Fall 2026)</span>
+          </div>
+          <div class="meta-org">
+            <span class="logo-chip" data-letter="S"><img src="assets/sau.png" alt="St. Ambrose" onerror="this.remove()"></span>
+            <span>St. Ambrose University · Class of 2026</span>
+          </div>
+          Davenport, Iowa → New York City<br>
           Originally from São Paulo, Brazil 🇧🇷
         </div>
       </div>
 
       <div class="about-text fade-3">
-        <h2>ML engineer building production systems.</h2>
-        <p class="lead">I'm a senior at St. Ambrose University (Data Science & Analytics + Mathematics) graduating May
-          2026. I specialize in building end-to-end machine learning systems from data pipelines to model deployment,
-          with hands-on experience in neural networks, gradient boosting, and modern AI architectures.</p>
-        <p>At Karrera AI, I engineered a production ML pipeline that processed 260K+ professional capabilities using
-          sentence transformers and MinHash clustering, reducing redundancy by 70% while training neural classifiers
-          across 312 categories. I designed scalable Python backends with ChromaDB for semantic search and optimized the
-          entire system for real-world performance at scale.</p>
-        <p>I compete seriously in Kaggle's March Machine Learning Mania, finishing in the top 37% in 2024 and 2025.
-          Beyond leaderboard rankings, I build practical systems including BigQuery feature pipelines, Monte Carlo
-          simulations for uncertainty quantification, ensemble voting strategies, and Elo rating systems. Each
-          competition represents an opportunity to ship production-quality code under constraints.</p>
-        <p>I'm currently learning AI agents and multi-modal systems, with a real project in the Pi515 AI challenge. I
-          care deeply about understanding the math behind models, writing clean code that scales, and solving problems
-          that matter. I've shipped features end-to-end in fast-paced environments with international teams.</p>
-        <p>I'm fluent in English and Portuguese, conversational in Spanish. Beyond work, I lead a varsity soccer team as
-          captain — if you want someone who can balance technical depth with team dynamics, let's talk.</p>
+        <h2>I build things that learn from data.</h2>
+        <p class="lead">I'm finishing my undergraduate degree in Data Science and Mathematics, and heading to NYU's
+          Center for Data Science to keep going deeper. I grew up in São Paulo, Brazil, played soccer across two
+          continents, and somewhere along the way got obsessed with machine learning and AI.</p>
+        <p>Most of my work lives at the intersection of math and engineering: designing systems that turn messy,
+          unstructured data into something useful. I like the full stack of it: understanding why a model behaves a
+          certain way, then actually shipping it into production. I've done both in real environments, and I care about
+          the gap between the two.</p>
+        <p>I compete in Kaggle tournaments not just for rankings, but because constraints force creativity. The same
+          reason I gravitate toward hard problems at work — I want to understand the tradeoffs, not just run the
+          pipeline.</p>
+        <p>I'm Brazilian, multilingual, and have spent years moving between cultures and teams. I think that shows up
+          in how I collaborate: direct, curious, and not precious about being wrong. If a better idea comes along,
+          I want to hear it.</p>
+        <p>Outside of work, I captain a varsity soccer team and play drums. Both taught me more about timing, pressure,
+          and reading a room than any class did.</p>
 
         <div class="divider"></div>
 
         <h3>Details</h3>
         <div class="info-list fade-4">
-          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Davenport, Iowa,
-              USA</span></div>
+          <div class="info-row"><span class="info-label">Location</span><span class="info-val">Davenport, Iowa → New
+              York City (Fall 2026)</span></div>
           <div class="info-row"><span class="info-label">From</span><span class="info-val">São Paulo, SP, Brazil</span>
           </div>
-          <div class="info-row"><span class="info-label">Degree</span><span class="info-val">B.S. Data Science &
-              Analytics + B.S. Mathematics, May 2026</span></div>
+          <div class="info-row"><span class="info-label">Graduate</span><span class="info-val">
+              <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
+              M.S. Data Science, NYU Center for Data Science, May 2028</span></div>
+          <div class="info-row"><span class="info-label">Degree</span><span class="info-val">
+              <span class="logo-chip" data-letter="S"><img src="assets/sau.png" alt="St. Ambrose" onerror="this.remove()"></span>
+              B.S. Data Science & Analytics + B.S. Mathematics, May 2026</span></div>
           <div class="info-row"><span class="info-label">Minors</span><span class="info-val">Computer Science ·
               Statistics</span></div>
           <div class="info-row"><span class="info-label">Languages</span><span class="info-val">English (fluent) ·
@@ -308,7 +334,7 @@
 
   <footer>
     <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa</span>
+    <span>Davenport, Iowa → New York City</span>
   </footer>
 </body>
 

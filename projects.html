@@ -145,6 +145,11 @@
       padding-bottom: 1px;
     }
 
+    .proj-company .logo-chip {
+      --chip: 24px;
+      margin-right: 0.5rem;
+    }
+
     @media (max-width: 600px) {
       .project-item {
         grid-template-columns: 1fr;
@@ -184,13 +189,17 @@
             <div class="proj-title">AI Agent for Pi515 Day of Innovation</div>
             <span class="proj-status s-wip">In progress</span>
           </div>
-          <div class="proj-company">Pi515 · Iowa</div>
+          <div class="proj-company">
+            <span class="logo-chip" data-letter="P"><img src="assets/pi515.jpeg" alt="Pi515" onerror="this.remove()"></span>
+            Pi515 · Iowa
+          </div>
           <div class="proj-date">2026</div>
-          <p class="proj-desc">Developing AI agents and multi-modal systems for Pi515's Day of Innovation. Focus on applying practical AI to solve real problems affecting Iowa communities.</p>
+          <p class="proj-desc">Developing AI agents and multi-modal systems for Pi515's Day of Innovation. Focus on
+            applying practical AI to solve real problems affecting Iowa communities.</p>
           <div class="proj-footer">
             <span class="tag">AI Agents</span><span class="tag">LLMs</span><span class="tag">Python</span><span
               class="tag">OpenClaw</span>
-            <a class="proj-link" href="https://www.pi515.org/day-of-innovation/ai-challenge" target="_blank">Pi515
+            <a class="proj-link" href="https://github.com/lcpizani/ABE/" target="_blank">Pi515
               challenge →</a>
           </div>
         </div>
@@ -203,9 +212,15 @@
             <div class="proj-title">WorkDNA Pipeline</div>
             <span class="proj-status s-private">Private</span>
           </div>
-          <div class="proj-company">Karrera AI · São Paulo, Brazil</div>
+          <div class="proj-company">
+            <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI" onerror="this.remove()"></span>
+            Karrera AI · São Paulo, Brazil
+          </div>
           <div class="proj-date">2025 - 2026</div>
-          <p class="proj-desc">Engineered production ML pipeline for Karrera's professional capability database. Extracted and structured data from unstructured sources using sentence transformers, applied MinHash + HDBSCAN clustering to reduce redundancy by 70% across 260K+ entries, and trained neural classifiers across 312 categories. Built scalable Python backends with ChromaDB for semantic search and REST APIs.</p>
+          <p class="proj-desc">Engineered production ML pipeline for Karrera's professional capability database.
+            Extracted and structured data from unstructured sources using sentence transformers, applied MinHash +
+            HDBSCAN clustering to reduce redundancy by 70% across 260K+ entries, and trained neural classifiers across
+            312 categories. Built scalable Python backends with ChromaDB for semantic search and REST APIs.</p>
           <div class="proj-footer">
             <span class="tag">SBERT</span><span class="tag">HDBSCAN</span><span class="tag">MinHash</span><span
               class="tag">ChromaDB</span><span class="tag">PyTorch</span><span class="tag">REST API</span>
@@ -220,9 +235,16 @@
             <div class="proj-title">March Machine Learning Mania</div>
             <span class="proj-status s-wip">3 years, ongoing</span>
           </div>
-          <div class="proj-company">Kaggle Competition</div>
+          <div class="proj-company">
+            <span class="logo-chip" data-letter="K"><img src="assets/kaggle.jpeg" alt="Kaggle" onerror="this.remove()"></span>
+            Kaggle Competition
+          </div>
           <div class="proj-date">2024 - Present</div>
-          <p class="proj-desc">Three-time competitor in Kaggle's NCAA tournament prediction challenge. 2024: Built BigQuery feature tables from 30+ sources, ensembled 5 models with GridSearchCV, implemented Monte Carlo simulation for uncertainty quantification, achieved top 37% ranking (302/820 teams). 2025: Refined with Elo rating systems and time-frame-based performance analysis (831/1,721 teams). 2026: Expanding ensemble architecture for 137,000+ matchup predictions.</p>
+          <p class="proj-desc">Three-time competitor in Kaggle's NCAA tournament prediction challenge. 2024: Built
+            BigQuery feature tables from 30+ sources, ensembled 5 models with GridSearchCV, implemented Monte Carlo
+            simulation for uncertainty quantification, achieved top 37% ranking (302/820 teams). 2025: Refined with Elo
+            rating systems and time-frame-based performance analysis (831/1,721 teams). 2026: Expanding ensemble
+            architecture for 137,000+ matchup predictions.</p>
           <div class="proj-footer">
             <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">BigQuery</span><span
               class="tag">Elo Ratings</span><span class="tag">Monte Carlo</span><span class="tag">Ensemble</span>
@@ -240,7 +262,12 @@
           </div>
           <div class="proj-company">Personal Project</div>
           <div class="proj-date">2024</div>
-          <p class="proj-desc">Comprehensive NBA scheduling analysis and evaluation project. Analyzed 10 seasons of scheduling data to quantify travel and back-to-back game impact. Built interactive visualization tool with 4 plot types including animated US travel maps and home-away streak heatmaps using Plotly. Engineered features: Haversine distances, rolling game density windows, Elo ratings. Trained two Gradient Boosting models to estimate schedule-driven win impact. Key finding: MIA gained 3.8 wins and POR lost 3.3 wins due to scheduling factors (2019-2024).</p>
+          <p class="proj-desc">Comprehensive NBA scheduling analysis and evaluation project. Analyzed 10 seasons of
+            scheduling data to quantify travel and back-to-back game impact. Built interactive visualization tool with 4
+            plot types including animated US travel maps and home-away streak heatmaps using Plotly. Engineered
+            features: Haversine distances, rolling game density windows, Elo ratings. Trained two Gradient Boosting
+            models to estimate schedule-driven win impact. Key finding: MIA gained 3.8 wins and POR lost 3.3 wins due to
+            scheduling factors (2019-2024).</p>
           <div class="proj-footer">
             <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Plotly</span><span
               class="tag">Gradient Boosting</span><span class="tag">Elo Ratings</span><span class="tag">Feature
@@ -256,9 +283,14 @@
             <div class="proj-title">UP Platform</div>
             <span class="proj-status s-done">Completed</span>
           </div>
-          <div class="proj-company">Noon App · Brazil / USA</div>
+          <div class="proj-company">
+            <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()"></span>
+            Noon App · Brazil / USA
+          </div>
           <div class="proj-date">2023</div>
-          <p class="proj-desc">Co-developed UP, a decentralized professional identity platform. Designed and built Knowledge and Social Graphs to power an AI assistant that understands users' skills, career trajectories, and professional networks.</p>
+          <p class="proj-desc">Co-developed UP, a decentralized professional identity platform. Designed and built
+            Knowledge and Social Graphs to power an AI assistant that understands users' skills, career trajectories,
+            and professional networks.</p>
           <div class="proj-footer">
             <span class="tag">Knowledge Graphs</span><span class="tag">Social Graphs</span><span class="tag">AI
               Assistant</span><span class="tag">Python</span>
@@ -269,14 +301,15 @@
     </div>
 
     <div class="note-box fade-5">
-      Some projects are under NDA or proprietary agreements. Descriptions emphasize novel technical approaches and measurable impact. See public work and code on <a href="https://kaggle.com/lucascarbogninpizani" target="_blank">Kaggle</a> and <a
-        href="https://github.com/lcpizani" target="_blank">GitHub</a>.
+      Some projects are under NDA or proprietary agreements. Descriptions emphasize novel technical approaches and
+      measurable impact. See public work and code on <a href="https://kaggle.com/lucascarbogninpizani"
+        target="_blank">Kaggle</a> and <a href="https://github.com/lcpizani" target="_blank">GitHub</a>.
     </div>
   </div>
 
   <footer>
     <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa</span>
+    <span>Davenport, Iowa → New York City</span>
   </footer>
 </body>
 

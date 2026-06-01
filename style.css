@@ -90,6 +90,46 @@ p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
 /* ── DIVIDER ── */
 .divider { height: 1px; background: var(--border); margin: 3rem 0; }
 
+/* ── ORG LOGO CHIP ──
+   Logos are treated as logos, not photos: each sits inside a padded chip
+   and is shown whole via object-fit:contain (never cropped). If the image
+   is missing, onerror removes the <img> and a branded monogram (data-letter)
+   shows through instead — so every entry stays consistent, no empty gaps. */
+.logo-chip {
+  --chip: 22px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--chip);
+  height: var(--chip);
+  border-radius: calc(var(--chip) * 0.22);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  vertical-align: middle;
+}
+.logo-chip::before {
+  content: attr(data-letter);
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: calc(var(--chip) * 0.46);
+  line-height: 1;
+  color: var(--accent);
+}
+.logo-chip img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14%;
+  background: var(--surface);
+  border-radius: inherit;
+}
+
 /* ── TAG ── */
 .tag {
   font-family: 'JetBrains Mono', monospace;
