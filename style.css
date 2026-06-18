@@ -144,6 +144,7 @@ nav {
   border: 1px solid var(--border);
   color: var(--muted);
   transition: all 0.15s;
+  overflow: hidden;
 }
 .nav-icon:hover {
   color: var(--blue);
