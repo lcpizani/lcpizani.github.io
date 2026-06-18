@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Lucas Pizani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     .contact-intro {
-      font-size: 1.1rem;
+      font-family: var(--font-body);
+      font-size: 1.05rem;
       color: var(--muted);
-      line-height: 1.8;
+      line-height: 1.82;
       max-width: 540px;
       margin-bottom: 3.5rem;
     }
@@ -22,6 +20,7 @@
     .contact-list {
       display: flex;
       flex-direction: column;
+      max-width: 680px;
     }
 
     .contact-row {
@@ -31,51 +30,45 @@
       gap: 2rem;
       padding: 1.2rem 0;
       border-bottom: 1px solid var(--border);
-      transition: padding-left 0.15s, background 0.15s;
+      transition: padding-left 0.15s;
     }
-
-    .contact-row:first-child {
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-row:hover {
-      padding-left: 0.5rem;
-    }
+    .contact-row:first-child { border-top: 1px solid var(--border); }
+    .contact-row:hover { padding-left: 0.5rem; }
 
     .contact-label {
-      font-size: 0.7rem;
-      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
     }
 
     .contact-val {
-      font-size: 0.92rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
       color: var(--ink);
-      font-weight: 400;
     }
 
     .contact-action {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
-      border-bottom: 1px solid var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--blue);
+      border-bottom: 1px solid rgba(27,61,120,0.3);
       padding-bottom: 1px;
       white-space: nowrap;
       transition: opacity 0.15s;
     }
-
-    .contact-action:hover {
-      opacity: 0.7;
-    }
+    .contact-action:hover { opacity: 0.65; }
 
     /* availability */
     .avail-box {
       margin-top: 3rem;
+      max-width: 680px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 2rem 2.5rem;
       display: flex;
       justify-content: space-between;
@@ -84,8 +77,9 @@
     }
 
     .avail-title {
-      font-size: 0.7rem;
-      font-weight: 700;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--muted);
@@ -93,69 +87,50 @@
     }
 
     .avail-body {
-      font-size: 0.92rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
       color: var(--ink);
       line-height: 1.6;
     }
 
-    .avail-pill {
+    .avail-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--accent2-light);
-      border: 1px solid #A7F3D0;
+      background: var(--green-dim);
+      border: 1px solid rgba(26,102,71,0.22);
       border-radius: 20px;
       padding: 0.5rem 1.1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #065F46;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--green);
       white-space: nowrap;
       flex-shrink: 0;
     }
 
-    .avail-dot {
-      width: 7px;
-      height: 7px;
+    .avail-badge-dot {
+      width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--accent2);
+      background: currentColor;
       animation: pulse 2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1)
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(0.8)
-      }
-    }
-
     @media (max-width: 640px) {
-      .contact-row {
-        grid-template-columns: 100px 1fr;
-      }
-
-      .contact-action {
-        display: none;
-      }
-
-      .avail-box {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5rem;
-      }
+      .contact-row { grid-template-columns: 100px 1fr; }
+      .contact-action { display: none; }
+      .avail-box { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
     }
   </style>
 </head>
 
 <body>
   <nav>
-    <span class="nav-logo">Lucas Pizani</span>
+    <div class="nav-brand">
+      <span class="nav-name">Lucas Pizani</span>
+      <span class="nav-sep">|</span>
+      <span class="nav-role">ML Engineer</span>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -163,54 +138,61 @@
       <li><a href="experience.html">Experience</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
+    <div class="nav-icons">
+      <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank" class="nav-icon" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://github.com/lcpizani" target="_blank" class="nav-icon" title="GitHub">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </a>
+    </div>
   </nav>
 
   <div class="page">
     <p class="eyebrow fade">Get in touch</p>
-    <h1 class="fade-2" style="margin-bottom:1rem;">Let's connect.</h1>
+    <h1 class="fade-2" style="margin-bottom:1rem;">Let's connect.<span class="cursor-blink"></span></h1>
     <p class="contact-intro fade-3">
       I'm available for full-time roles in machine learning engineering, AI research, and data science starting May
       2026. Open to discussing internships, research projects, and technical challenges. Feel free to reach out.
     </p>
 
-    <div class="contact-row fade-4">
-      <span class="contact-label">LinkedIn</span>
-      <span class="contact-val">linkedin.com/in/lucas-c-pizani</span>
-      <a class="contact-action" href="https://linkedin.com/in/lucas-c-pizani" target="_blank">Open →</a>
+    <div class="contact-list">
+      <div class="contact-row fade-4">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-val">linkedin.com/in/lucas-c-pizani</span>
+        <a class="contact-action" href="https://linkedin.com/in/lucas-c-pizani" target="_blank">Open →</a>
+      </div>
+      <div class="contact-row fade-4">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-val">github.com/lcpizani</span>
+        <a class="contact-action" href="https://github.com/lcpizani" target="_blank">Open →</a>
+      </div>
+      <div class="contact-row fade-4">
+        <span class="contact-label">Kaggle</span>
+        <span class="contact-val">kaggle.com/lucascarbogninpizani</span>
+        <a class="contact-action" href="https://kaggle.com/lucascarbogninpizani" target="_blank">Open →</a>
+      </div>
+      <div class="contact-row fade-5">
+        <span class="contact-label">Location</span>
+        <span class="contact-val">Davenport, Iowa — open to relocation & remote</span>
+      </div>
     </div>
-    <div class="contact-row fade-4">
-      <span class="contact-label">GitHub</span>
-      <span class="contact-val">github.com/lcpizani</span>
-      <a class="contact-action" href="https://github.com/lcpizani" target="_blank">Open →</a>
-    </div>
-    <div class="contact-row fade-4">
-      <span class="contact-label">Kaggle</span>
-      <span class="contact-val">kaggle.com/lucascarbogninpizani</span>
-      <a class="contact-action" href="https://kaggle.com/lucascarbogninpizani" target="_blank">Open →</a>
-    </div>
-    <div class="contact-row fade-5">
-      <span class="contact-label">Location</span>
-      <span class="contact-val">Davenport, Iowa — open to relocation & remote</span>
-    </div>
-  </div>
 
-  <div class="avail-box fade-5">
-    <div class="avail-left">
-      <div class="avail-title">Availability</div>
-      <div class="avail-body">Open to full-time roles in data science, machine learning engineering, and AI from May
-        2026.</div>
+    <div class="avail-box fade-5">
+      <div>
+        <div class="avail-title">Availability</div>
+        <div class="avail-body">Open to full-time roles in data science, machine learning engineering, and AI from May 2026.</div>
+      </div>
+      <div class="avail-badge">
+        <div class="avail-badge-dot"></div>
+        Available May 2026
+      </div>
     </div>
-    <div class="avail-pill">
-      <div class="avail-dot"></div>
-      Available May 2026
-    </div>
-  </div>
   </div>
 
   <footer>
     <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa</span>
+    <span>Davenport, Iowa → New York City</span>
   </footer>
 </body>
-
 </html>

@@ -1,28 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
 :root {
-  --bg: #F7F5F0;
-  --surface: #FFFFFF;
-  --ink: #1A1A18;
-  --muted: #6B6B65;
-  --accent: #1D4ED8;
-  --accent-light: #EEF2FF;
-  --accent2: #059669;
-  --accent2-light: #ECFDF5;
-  --border: #E4E0D8;
-  --tag-bg: #F0EDE6;
+  /* ── Canvas ── */
+  --bg:        #F9F8F5;
+  --bg-2:      #EFECEA;
+  --surface:   #FFFFFF;
+  --surface-2: #F5F3EF;
+
+  /* ── Text ── */
+  --ink:       #1B1916;
+  --ink-2:     #3E3B35;
+  --muted:     #7A7469;
+  --muted-2:   #ABA59C;
+
+  /* ── Structure ── */
+  --border:    #E6E2DC;
+  --border-2:  #CEC9C0;
+
+  /* ── Primary accent — deep navy ── */
+  --blue:       #1B3D78;
+  --blue-light: #2E62B8;
+  --blue-dim:   rgba(27, 61, 120, 0.08);
+  --blue-mid:   rgba(27, 61, 120, 0.16);
+
+  /* ── Secondary accent — warm amber ── */
+  --amber:      #B5670E;
+  --amber-dim:  rgba(181, 103, 14, 0.09);
+
+  /* ── Status ── */
+  --green:     #1A6647;
+  --green-dim: rgba(26, 102, 71, 0.09);
+
+  /* ── Tags ── */
+  --tag-bg:    #EBE7E1;
+
+  /* ── Backward compat aliases (used by older page styles) ── */
+  --accent:        var(--blue);
+  --accent-light:  var(--blue-dim);
+  --accent2:       var(--green);
+  --accent2-light: var(--green-dim);
+
+  /* ── Fonts ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Figtree', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--ink);
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -30,100 +62,197 @@ a { color: inherit; text-decoration: none; }
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(247,245,240,0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(249, 248, 245, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  height: 60px;
+  height: 64px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2.5rem;
 }
-.nav-logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.1rem;
-  color: var(--ink);
-  letter-spacing: -0.01em;
+
+.nav-brand {
+  display: flex; align-items: center; gap: 0.55rem;
+  flex-shrink: 0;
 }
-.nav-links { display: flex; gap: 0.2rem; list-style: none; }
-.nav-links a {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--muted);
-  padding: 0.35rem 0.8rem;
-  border-radius: 5px;
-  transition: color 0.15s, background 0.15s;
+.nav-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
   letter-spacing: 0.01em;
 }
-.nav-links a:hover { color: var(--ink); background: var(--border); }
-.nav-links a.active { color: var(--accent); background: var(--accent-light); }
+.nav-sep {
+  color: var(--border-2);
+  font-size: 1rem;
+  font-weight: 300;
+}
+.nav-role {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--blue);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* legacy nav logo class */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.nav-logo .logo-star { color: var(--blue); font-size: 1.2rem; }
+
+.nav-links { display: flex; gap: 0.1rem; list-style: none; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-links a:hover { color: var(--ink); background: var(--bg-2); }
+.nav-links a.active { color: var(--blue); background: var(--blue-dim); }
+
+.nav-icons {
+  display: flex; align-items: center; gap: 0.4rem;
+  flex-shrink: 0;
+}
+.nav-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: all 0.15s;
+}
+.nav-icon:hover {
+  color: var(--blue);
+  border-color: var(--blue-light);
+  background: var(--blue-dim);
+}
 
 /* ── PAGE CONTAINER ── */
-.page { max-width: 1100px; margin: 0 auto; padding: 80px 2rem 5rem; }
+.page { max-width: 1140px; margin: 0 auto; padding: 84px 2rem 5rem; position: relative; }
 
 /* ── TYPOGRAPHY ── */
 h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.07;
   color: var(--ink);
 }
-h1 em { font-style: italic; color: var(--accent); }
+h1 em { font-style: italic; color: var(--amber); }
+
 h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.2;
   color: var(--ink);
 }
+
 h3 {
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: var(--muted);
   margin-bottom: 1.2rem;
 }
+
 p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.65rem;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 26px; height: 1.5px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+.section-head {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--blue);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 22px; height: 1.5px;
+  background: var(--blue);
+}
+
+/* ── CURSOR BLINK ── */
+.cursor-blink::after {
+  content: '|';
+  color: var(--blue);
+  font-weight: 300;
+  animation: blink 1.1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
 
 /* ── DIVIDER ── */
 .divider { height: 1px; background: var(--border); margin: 3rem 0; }
 
-/* ── ORG LOGO CHIP ──
-   Logos are treated as logos, not photos: each sits inside a padded chip
-   and is shown whole via object-fit:contain (never cropped). If the image
-   is missing, onerror removes the <img> and a branded monogram (data-letter)
-   shows through instead — so every entry stays consistent, no empty gaps. */
+/* ── ORG LOGO CHIP ── */
 .logo-chip {
   --chip: 22px;
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0;
-  width: var(--chip);
-  height: var(--chip);
+  width: var(--chip); height: var(--chip);
   border-radius: calc(var(--chip) * 0.22);
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   overflow: hidden;
   vertical-align: middle;
 }
 .logo-chip::before {
   content: attr(data-letter);
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: calc(var(--chip) * 0.46);
   line-height: 1;
-  color: var(--accent);
+  color: var(--blue);
 }
 .logo-chip img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   object-fit: contain;
   padding: 14%;
   background: var(--surface);
@@ -132,66 +261,122 @@ p { color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
 
 /* ── TAG ── */
 .tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  padding: 0.2rem 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  padding: 0.22rem 0.55rem;
   background: var(--tag-bg);
   border: 1px solid var(--border);
   border-radius: 4px;
   color: var(--muted);
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
 }
+.tag:hover { border-color: var(--blue); color: var(--blue); }
 
-/* ── SECTION EYEBROW ── */
-.eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  display: flex; align-items: center; gap: 0.6rem;
-}
-.eyebrow::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--accent); }
-
-/* ── BUTTON ── */
+/* ── BUTTONS ── */
 .btn {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.65rem 1.4rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.72rem 1.6rem;
+  border-radius: 7px;
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
   border: 1.5px solid transparent;
 }
-.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-.btn-primary:hover { background: #1741b8; }
-.btn-outline { background: transparent; color: var(--ink); border-color: var(--border); }
-.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+.btn-primary:hover {
+  background: var(--blue-light);
+  border-color: var(--blue-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(27, 61, 120, 0.25);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ink-2);
+  border-color: var(--border-2);
+}
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: var(--blue-dim);
+}
 
-/* ── FADE IN ── */
+/* ── STATUS PILLS ── */
+.proj-status {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.s-wip     { background: rgba(181,103,14,0.10); color: #8A4F0A; border: 1px solid rgba(181,103,14,0.22); }
+.s-done    { background: var(--green-dim);       color: var(--green); border: 1px solid rgba(26,102,71,0.22); }
+.s-private { background: var(--tag-bg);          color: var(--muted); border: 1px solid var(--border); }
+
+/* ── AVAILABILITY PILL ── */
+.avail-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--green-dim);
+  border: 1px solid rgba(26,102,71,0.22);
+  border-radius: 20px;
+  padding: 0.45rem 1rem;
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: var(--green);
+  align-self: flex-start;
+  font-family: var(--font-mono);
+}
+.avail-pill.nyu {
+  background: var(--blue-dim);
+  border-color: rgba(27,61,120,0.2);
+  color: var(--blue);
+}
+.avail-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.75); }
+}
+
+/* ── FADE ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .fade   { animation: fadeUp 0.5s ease both; }
-.fade-2 { animation: fadeUp 0.5s 0.08s ease both; }
-.fade-3 { animation: fadeUp 0.5s 0.16s ease both; }
-.fade-4 { animation: fadeUp 0.5s 0.24s ease both; }
-.fade-5 { animation: fadeUp 0.5s 0.32s ease both; }
+.fade-2 { animation: fadeUp 0.5s 0.07s ease both; }
+.fade-3 { animation: fadeUp 0.5s 0.14s ease both; }
+.fade-4 { animation: fadeUp 0.5s 0.21s ease both; }
+.fade-5 { animation: fadeUp 0.5s 0.28s ease both; }
 
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
-  padding: 1.5rem 2.5rem;
+  padding: 1.6rem 2.5rem;
   display: flex; justify-content: space-between; align-items: center;
 }
-footer span { font-size: 0.78rem; color: var(--muted); }
+footer span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted-2);
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 0 1rem; }
-  .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.75rem; }
+  .nav-role, .nav-sep { display: none; }
+  .nav-links a { padding: 0.3rem 0.55rem; font-size: 0.78rem; }
   .page { padding: 80px 1.25rem 4rem; }
   footer { flex-direction: column; gap: 0.4rem; text-align: center; padding: 1.2rem; }
 }

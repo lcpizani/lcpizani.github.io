@@ -4,90 +4,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lucas Pizani</title>
+  <title>Lucas Pizani — ML Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* ── HERO ── */
     .hero {
-      min-height: calc(100vh - 60px);
+      min-height: calc(100vh - 84px);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 400px;
       gap: 5rem;
       align-items: center;
-      padding-top: 3rem;
+      padding-top: 2rem;
     }
 
     .hero-greeting {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
     .hero-greeting::before {
       content: '';
       display: inline-block;
-      width: 28px;
-      height: 1.5px;
-      background: var(--muted);
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
     }
 
     .hero h1 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.4rem;
     }
 
     .hero-bio {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--muted);
-      line-height: 1.8;
-      max-width: 460px;
-      margin-bottom: 2rem;
+      line-height: 1.85;
+      max-width: 500px;
+      margin-bottom: 2.4rem;
     }
 
-    /* stat cards */
+    /* stats */
     .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 2rem;
+      display: flex;
+      gap: 0;
+      margin-bottom: 2.4rem;
+      padding-bottom: 2.4rem;
+      border-bottom: 1px solid var(--border);
     }
 
     .hstat {
-      background: var(--surface);
-      padding: 1.1rem 1.2rem;
-      transition: background 0.15s;
+      padding-right: 2.2rem;
+      margin-right: 2.2rem;
+      border-right: 1px solid var(--border);
     }
 
-    .hstat:hover {
-      background: var(--accent-light);
+    .hstat:last-child {
+      border-right: none;
+      padding-right: 0;
+      margin-right: 0;
     }
 
     .hstat-n {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.7rem;
-      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--amber);
       line-height: 1;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
 
     .hstat-l {
-      font-size: 0.72rem;
-      color: var(--muted);
-      line-height: 1.4;
+      font-family: var(--font-mono);
+      font-size: 0.59rem;
+      color: var(--muted-2);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
-    /* ctas */
     .hero-ctas {
       display: flex;
       gap: 0.8rem;
@@ -95,44 +96,67 @@
       margin-bottom: 2rem;
     }
 
-    /* external links */
     .hero-links {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      gap: 1.8rem;
     }
 
     .hero-links a {
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
       color: var(--muted);
       display: flex;
       align-items: center;
-      gap: 0.3rem;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: color 0.15s, border-color 0.15s;
+      gap: 0.4rem;
+      transition: color 0.15s;
     }
 
     .hero-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+      color: var(--blue);
+    }
+
+    .hero-links svg {
+      opacity: 0.7;
     }
 
     /* ── PHOTO COLUMN ── */
     .hero-photo-col {
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1rem;
+    }
+
+    /* accent rectangle behind photo */
+    .photo-accent {
+      position: absolute;
+      top: -18px;
+      right: -22px;
+      width: 76%;
+      height: 72%;
+      background: var(--blue);
+      border-radius: 16px;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    /* subtle grid pattern on accent */
+    .photo-accent::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(27, 61, 120, 0.15) 19px, rgba(27, 61, 120, 0.15) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(27, 61, 120, 0.15) 19px, rgba(27, 61, 120, 0.15) 20px);
+      border-radius: inherit;
     }
 
     .photo-frame {
       position: relative;
+      z-index: 1;
       border-radius: 16px;
       overflow: hidden;
       aspect-ratio: 4/5;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
       border: 1px solid var(--border);
+      box-shadow: 0 24px 64px rgba(27, 61, 120, 0.13), 0 4px 16px rgba(0, 0, 0, 0.07);
     }
 
     .photo-frame img {
@@ -143,133 +167,290 @@
       display: block;
     }
 
+    .photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27, 25, 22, 0.42) 0%, transparent 48%);
+    }
+
     .photo-badge {
       position: absolute;
       bottom: 1.2rem;
       left: 1.2rem;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
+      background: rgba(249, 248, 245, 0.93);
+      backdrop-filter: blur(14px);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.9rem;
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      z-index: 2;
     }
 
     .photo-badge-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
+      font-family: var(--font-display);
+      font-size: 0.98rem;
+      font-weight: 700;
       color: var(--ink);
-      line-height: 1.2;
+      line-height: 1.3;
     }
 
     .photo-badge-sub {
-      font-size: 0.72rem;
+      font-family: var(--font-mono);
+      font-size: 0.61rem;
       color: var(--muted);
     }
 
-    /* availability pill */
-    .avail-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--accent2-light);
-      border: 1px solid #A7F3D0;
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: #065F46;
-      align-self: flex-start;
+    /* ── SECTION SEPARATOR ── */
+    .section-hr {
+      height: 1px;
+      background: var(--border);
+      margin: 4.5rem 0;
     }
 
-    .avail-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent2);
-      animation: pulse 2s ease-in-out infinite;
+    /* ── CURRENTLY GRID ── */
+    .block-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1)
-      }
-
-      50% {
-        opacity: 0.5;
-        transform: scale(0.8)
-      }
+    .see-all {
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: var(--blue);
+      letter-spacing: 0.04em;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+      padding-bottom: 1px;
+      border-bottom: 1px solid rgba(27, 61, 120, 0.3);
     }
 
-    .avail-pill.nyu {
-      background: #F5F0FA;
-      border-color: #C9A8E8;
-      color: #57068C;
-    }
-
-    .avail-pill.nyu .avail-dot {
-      background: #57068C;
-    }
-
-    /* ── CURRENTLY STRIP ── */
-    .currently {
-      padding: 3rem 0;
-      border-top: 1px solid var(--border);
+    .see-all:hover {
+      opacity: 0.65;
     }
 
     .currently-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
     }
 
     .ci {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.4rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 1.8rem 1.7rem;
+      transition: background 0.15s;
     }
 
     .ci:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      background: var(--surface-2);
     }
 
     .ci .logo-chip {
-      --chip: 46px;
+      --chip: 40px;
       display: flex;
       margin-bottom: 1rem;
     }
 
     .ci-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.06em;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--blue);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .ci-title {
-      font-weight: 600;
-      font-size: 0.88rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.02rem;
       color: var(--ink);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
     }
 
     .ci-body {
       font-size: 0.82rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    @media (max-width: 900px) {
+    /* ── FEATURED PROJECT CARDS ── */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .feat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 44px rgba(27, 61, 120, 0.10);
+      border-color: var(--border-2);
+    }
+
+    .feat-card::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      flex-shrink: 0;
+    }
+
+    .feat-card:hover::before {
+      opacity: 1;
+    }
+
+    .feat-thumb {
+      height: 156px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .feat-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .feat-card:hover .feat-thumb img {
+      transform: scale(1.04);
+    }
+
+    /* light-toned gradient thumbs */
+    .thumb-purple {
+      background: linear-gradient(135deg, #EEF1FB 0%, #C8CEEF 60%, #A8B1EA 100%);
+    }
+
+    .thumb-mystery {
+      background: linear-gradient(135deg, #EDF3FD 0%, #C0D2F2 50%, #97B6EA 100%);
+    }
+
+    .thumb-indigo {
+      background: linear-gradient(135deg, #EEF1FC 0%, #C6CBEF 50%, #A5ACEA 100%);
+    }
+
+    .thumb-amber {
+      background: linear-gradient(135deg, #FDF8F0 0%, #F5E3C0 50%, #EBC98A 100%);
+    }
+
+    .thumb-blue {
+      background: linear-gradient(135deg, #EDF5FD 0%, #BFDAF8 50%, #92C0F0 100%);
+    }
+
+    .thumb-teal {
+      background: linear-gradient(135deg, #EDFAF5 0%, #BAEFDA 50%, #87E4C0 100%);
+    }
+
+    .feat-thumb::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(27, 61, 120, 0.07) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .feat-thumb.thumb-img::before {
+      display: none;
+    }
+
+    .thumb-emoji {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 2px 8px rgba(27, 61, 120, 0.18));
+    }
+
+    .feat-body {
+      padding: 1.25rem 1.4rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .feat-cat {
+      font-family: var(--font-mono);
+      font-size: 0.59rem;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+    }
+
+    .feat-title {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .feat-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .feat-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--blue);
+      padding: 0.48rem 1rem;
+      border-radius: 6px;
+      transition: all 0.15s;
+      align-self: flex-start;
+    }
+
+    .feat-btn:hover {
+      background: var(--blue-light);
+      transform: translateX(2px);
+    }
+
+    .view-all-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 980px) {
       .hero {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
+        min-height: auto;
+        padding-top: 2rem;
       }
 
       .hero-photo-col {
@@ -277,16 +458,37 @@
       }
 
       .photo-frame {
-        max-height: 380px;
+        max-height: 360px;
         aspect-ratio: auto;
+      }
+
+      .photo-accent {
+        display: none;
       }
 
       .currently-grid {
         grid-template-columns: 1fr;
       }
 
+      .feat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .feat-grid {
+        grid-template-columns: 1fr;
+      }
+
       .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .hstat {
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
       }
     }
   </style>
@@ -294,7 +496,11 @@
 
 <body>
   <nav>
-    <span class="nav-logo">Lucas Pizani</span>
+    <div class="nav-brand">
+      <span class="nav-name">Lucas Pizani</span>
+      <span class="nav-sep">|</span>
+      <span class="nav-role">ML Engineer</span>
+    </div>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -302,43 +508,71 @@
       <li><a href="experience.html">Experience</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="nav-icons">
+      <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank" class="nav-icon" title="LinkedIn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
+      </a>
+      <a href="https://github.com/lcpizani" target="_blank" class="nav-icon" title="GitHub">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+        </svg>
+      </a>
+    </div>
   </nav>
 
   <div class="page">
+    <!-- ── HERO ── -->
     <div class="hero">
-      <!-- LEFT: TEXT -->
       <div class="hero-text">
         <p class="hero-greeting fade">São Paulo → Iowa → New York City</p>
-        <h1 class="fade-2">Hi, I'm<br><em>Lucas Pizani</em></h1>
+        <h1 class="fade-2">Hi, I'm<br><em>Lucas Pizani</em><span class="cursor-blink"></span></h1>
         <p class="hero-bio fade-3">
-          ML and AI engineer with deep expertise in building neural networks, training machine learning models, and
-          developing AI agents. I compete at elite levels in Kaggle competitions, build end-to-end ML pipelines, and am
-          passionate about solving real-world problems with data-driven systems. Graduating May 2026 and relocating to
-          New York City to pursue an M.S. in Data Science at NYU.
+          ML and AI engineer with deep expertise in building neural networks, training machine learning models,
+          and developing AI agents. I compete at elite levels in Kaggle, build end-to-end ML pipelines, and
+          am passionate about solving real-world problems with data-driven systems.
         </p>
 
+        <div class="hero-stats fade-3">
+          <div class="hstat">
+            <div class="hstat-n">3+</div>
+            <div class="hstat-l">years building ML</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-n">7+</div>
+            <div class="hstat-l">projects shipped</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-n">Top 37%</div>
+            <div class="hstat-l">Kaggle March Mania</div>
+          </div>
+        </div>
+
         <div class="hero-ctas fade-4">
-          <a class="btn btn-primary" href="projects.html">View Projects</a>
+          <a class="btn btn-primary" href="projects.html">Explore Portfolio →</a>
           <a class="btn btn-outline" href="contact.html">Get in Touch</a>
         </div>
 
         <div class="hero-links fade-4">
           <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
               <circle cx="4" cy="4" r="2" />
             </svg>
             LinkedIn
           </a>
           <a href="https://github.com/lcpizani" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
             </svg>
             GitHub
           </a>
           <a href="https://kaggle.com/lucascarbogninpizani" target="_blank">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
             </svg>
             Kaggle
@@ -346,13 +580,13 @@
         </div>
       </div>
 
-      <!-- RIGHT: PHOTO -->
       <div class="hero-photo-col fade-3">
+        <div class="photo-accent"></div>
         <div class="photo-frame">
           <img src="profile.jpg" alt="Lucas Pizani" />
           <div class="photo-badge">
             <div class="photo-badge-name">Lucas Pizani</div>
-            <div class="photo-badge-sub">Data Scientist · Mathematician</div>
+            <div class="photo-badge-sub">ML Engineer · Mathematician</div>
           </div>
         </div>
         <div class="avail-pill nyu">
@@ -362,33 +596,102 @@
       </div>
     </div>
 
-    <!-- CURRENTLY -->
-    <div class="currently fade-5">
-      <h3>Currently</h3>
+    <div class="section-hr"></div>
+
+    <!-- ── CURRENTLY ── -->
+    <div class="fade-5">
+      <div class="block-head">
+        <div>
+          <div class="section-label">Status</div>
+          <div class="section-head">Currently</div>
+        </div>
+      </div>
       <div class="currently-grid">
         <div class="ci">
           <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
-          <div class="ci-num">01 INCOMING · FALL 2026</div>
+          <div class="ci-num">01 · Incoming · Fall 2026</div>
           <div class="ci-title">NYU · MS Data Science</div>
-          <div class="ci-body">Relocating to New York City to pursue a Master's in Data Science at NYU's Center for
-            Data Science. Starting Fall 2026.</div>
+          <div class="ci-body">Relocating to New York City to pursue a Master's in Data Science at NYU's Center for Data
+            Science. Starting Fall 2026.</div>
         </div>
         <div class="ci">
-          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI" onerror="this.remove()"></span>
-          <div class="ci-num">02 ACTIVE</div>
+          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI"
+              onerror="this.remove()"></span>
+          <div class="ci-num">02 · Active</div>
           <div class="ci-title">Karrera AI</div>
           <div class="ci-body">ML intern engineering embedding pipelines and neural classifiers across 260K+
             professional capabilities and 312 categories.</div>
         </div>
         <div class="ci">
-          <span class="logo-chip" data-letter="K"><img src="assets/kaggle.jpeg" alt="Kaggle" onerror="this.remove()"></span>
-          <div class="ci-num">03 COMPETITION</div>
+          <span class="logo-chip" data-letter="K"><img src="assets/kaggle.jpeg" alt="Kaggle"
+              onerror="this.remove()"></span>
+          <div class="ci-num">03 · Competition</div>
           <div class="ci-title">March Mania 2026</div>
-          <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Ranked top 37% in 2024-2025
-            using BigQuery, Monte Carlo, Elo models.</div>
+          <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Ranked top 37% using
+            BigQuery, Monte Carlo, and Elo models.</div>
         </div>
       </div>
     </div>
+
+    <div class="section-hr"></div>
+
+    <!-- ── FEATURED PROJECTS ── -->
+    <div class="fade-5">
+      <div class="block-head">
+        <div>
+          <div class="section-label">Work</div>
+          <div class="section-head">Featured Projects</div>
+        </div>
+        <a href="projects.html" class="see-all">View all projects →</a>
+      </div>
+      <div class="feat-grid">
+
+        <div class="feat-card">
+          <div class="feat-thumb thumb-purple">
+            <span class="thumb-emoji">🤖</span>
+          </div>
+          <div class="feat-body">
+            <div class="feat-cat">AI Agents</div>
+            <div class="feat-title">AI Agent for Pi515 Day of Innovation</div>
+            <p class="feat-desc">Built multi-modal AI agents for Pi515's Day of Innovation, applying practical AI to
+              real Iowa community problems. Finalist.</p>
+            <a href="https://github.com/lcpizani/ABE/" target="_blank" class="feat-btn">View Project →</a>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-thumb thumb-img">
+            <img src="assets/screenshot_wc.png" alt="World Cup Predictor" />
+          </div>
+          <div class="feat-body">
+            <div class="feat-cat">Full-Stack</div>
+            <div class="feat-title">World Cup Predictor</div>
+            <p class="feat-desc">Full-stack prediction league for FIFA World Cup 2026. Friends create leagues, predict
+              scorelines, and compete on a live leaderboard.</p>
+            <a href="https://wcfootballpredictions.com" target="_blank" class="feat-btn">Live App →</a>
+          </div>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-thumb thumb-mystery">
+            <img src="assets/screenshot_mm.png" alt="Midnight Mystery" />
+          </div>
+          <div class="feat-body">
+            <div class="feat-cat">AI Agents</div>
+            <div class="feat-title">Midnight Mystery</div>
+            <p class="feat-desc">AI murder mystery where a 27B model authors the entire case, then role-plays every
+              character live. HuggingFace "best-agent" award.</p>
+            <a href="https://huggingface.co/spaces/lcpizani/midnight_mystery_space" target="_blank" class="feat-btn">Try
+              It →</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="view-all-row">
+        <a class="btn btn-outline" href="projects.html">See All Projects →</a>
+      </div>
+    </div>
+
   </div>
 
   <footer>
