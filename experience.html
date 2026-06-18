@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience — Lucas Pizani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .exp-list { display: flex; flex-direction: column; }
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
 
     .exp-item {
       display: grid;
@@ -20,8 +26,15 @@
       border-left: 2px solid transparent;
       transition: padding-left 0.2s, border-left-color 0.2s;
     }
-    .exp-item:first-child { border-top: 1px solid var(--border); }
-    .exp-item:hover { padding-left: 0.6rem; border-left-color: var(--blue); }
+
+    .exp-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .exp-item:hover {
+      padding-left: 0.6rem;
+      border-left-color: var(--blue);
+    }
 
     .exp-date {
       font-family: var(--font-mono);
@@ -30,6 +43,7 @@
       line-height: 1.7;
       padding-top: 0.25rem;
     }
+
     .exp-date .label {
       font-size: 0.6rem;
       font-weight: 500;
@@ -39,6 +53,7 @@
       display: block;
       margin-bottom: 0.3rem;
     }
+
     .exp-date .logo-chip {
       --chip: 62px;
       display: flex;
@@ -67,8 +82,14 @@
       color: var(--muted);
       line-height: 1.75;
     }
-    .exp-desc ul { padding-left: 1.1rem; }
-    .exp-desc li { margin-bottom: 0.3rem; }
+
+    .exp-desc ul {
+      padding-left: 1.1rem;
+    }
+
+    .exp-desc li {
+      margin-bottom: 0.3rem;
+    }
 
     .exp-tags {
       display: flex;
@@ -92,9 +113,10 @@
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       border-top: 2px solid var(--border);
     }
+
     .skill-group:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(27,61,120,0.07);
+      box-shadow: 0 6px 20px rgba(27, 61, 120, 0.07);
       border-color: var(--border-2);
       border-top-color: var(--blue);
     }
@@ -109,7 +131,11 @@
       margin-bottom: 0.8rem;
     }
 
-    .sg-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .sg-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
 
     .sg-pill {
       font-family: var(--font-mono);
@@ -122,9 +148,10 @@
       letter-spacing: 0.03em;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
+
     .sg-pill:hover {
       background: var(--blue-dim);
-      border-color: rgba(27,61,120,0.3);
+      border-color: rgba(27, 61, 120, 0.3);
       color: var(--blue);
     }
 
@@ -143,6 +170,7 @@
       padding: 0.35rem 0;
       border-bottom: 1px solid var(--border);
     }
+
     .course span {
       font-family: var(--font-mono);
       font-size: 0.62rem;
@@ -151,9 +179,18 @@
     }
 
     @media (max-width: 700px) {
-      .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .course-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -174,10 +211,16 @@
     </ul>
     <div class="nav-icons">
       <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank" class="nav-icon" title="LinkedIn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
       </a>
       <a href="https://github.com/lcpizani" target="_blank" class="nav-icon" title="GitHub">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+        </svg>
       </a>
       <a href="https://kaggle.com/lucascarbogninpizani" target="_blank" class="nav-icon" title="Kaggle">
         <img src="assets/kaggle.png" alt="Kaggle">
@@ -196,7 +239,8 @@
     <div class="exp-list">
       <div class="exp-item fade-3">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI" onerror="this.remove()"></span>
+          <span class="logo-chip" data-letter="K"><img src="assets/karrera-ai.png" alt="Karrera AI"
+              onerror="this.remove()"></span>
           <span class="label">Current</span>Jun 2025 – Present<br><br>Remote<br>São Paulo, Brazil
         </div>
         <div>
@@ -204,19 +248,25 @@
           <div class="exp-company">Karrera AI</div>
           <div class="exp-desc">
             <ul>
-              <li>Extracted and structured high-volume capability dataset from unstructured sources using AI and sentence transformers (SBERT).</li>
-              <li>Applied MinHash + HDBSCAN clustering to 260K+ entries, reducing data redundancy by 70% while preserving semantic relationships.</li>
-              <li>Trained neural network classifiers using PyTorch across 312 professional categories with strong validation metrics.</li>
-              <li>Designed and deployed scalable Python backends handling data ingestion, preprocessing, vector search with ChromaDB, and REST API endpoints serving production queries.</li>
+              <li>Extracted and structured high-volume capability dataset from unstructured sources using AI and
+                sentence transformers (SBERT).</li>
+              <li>Applied MinHash + HDBSCAN clustering to 260K+ entries, reducing data redundancy by 70% while
+                preserving semantic relationships.</li>
+              <li>Trained neural network classifiers using PyTorch across 312 professional categories with strong
+                validation metrics.</li>
+              <li>Designed and deployed scalable Python backends handling data ingestion, preprocessing, vector search
+                with ChromaDB, and REST API endpoints serving production queries.</li>
             </ul>
           </div>
-          <div class="exp-tags"><span class="tag">Python</span><span class="tag">SBERT</span><span class="tag">HDBSCAN</span><span class="tag">ChromaDB</span><span class="tag">PyTorch</span></div>
+          <div class="exp-tags"><span class="tag">Python</span><span class="tag">SBERT</span><span
+              class="tag">HDBSCAN</span><span class="tag">ChromaDB</span><span class="tag">PyTorch</span></div>
         </div>
       </div>
 
       <div class="exp-item fade-3">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()" style="transform: scale(1.55);"></span>
+          <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()"
+              style="transform: scale(1.55);"></span>
           <span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA
         </div>
         <div>
@@ -224,36 +274,44 @@
           <div class="exp-company">Noon App</div>
           <div class="exp-desc">
             <ul>
-              <li>Co-designed and developed UP, a decentralized professional identity platform focusing on semantic understanding of skills and careers.</li>
-              <li>Engineered Knowledge Graphs and Social Graphs to structure professional data and enable intelligent assistant functionality.</li>
+              <li>Co-designed and developed UP, a decentralized professional identity platform focusing on semantic
+                understanding of skills and careers.</li>
+              <li>Engineered Knowledge Graphs and Social Graphs to structure professional data and enable intelligent
+                assistant functionality.</li>
               <li>Built data collection and storage systems to support AI assistant training and personalization.</li>
             </ul>
           </div>
-          <div class="exp-tags"><span class="tag">Knowledge Graphs</span><span class="tag">AI Assistant</span><span class="tag">Python</span></div>
+          <div class="exp-tags"><span class="tag">Knowledge Graphs</span><span class="tag">AI Assistant</span><span
+              class="tag">Python</span></div>
         </div>
       </div>
 
       <div class="exp-item fade-4">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="S"><img src="assets/sodexo.png" alt="Sodexo" onerror="this.remove()"></span>
-          <span class="label">Part-time</span>Aug 2023 – Present<br><br>Davenport, IA
+          <span class="logo-chip" data-letter="S"><img src="assets/sodexo.png" alt="Sodexo"
+              onerror="this.remove()"></span>
+          <span class="label">Part-time</span>Aug 2023 – May 2026<br><br>Davenport, IA
         </div>
         <div>
           <div class="exp-role">Student Worker · Dining Services</div>
           <div class="exp-company">Sodexo · St. Ambrose University</div>
-          <div class="exp-desc">Dining and food service operations on the St. Ambrose University campus — customer service, point-of-sale, and front-of-house operations while balancing a full course load and varsity athletics.</div>
+          <div class="exp-desc">Dining and food service operations on the St. Ambrose University campus — customer
+            service, point-of-sale, and front-of-house operations while balancing a full course load and varsity
+            athletics.</div>
         </div>
       </div>
 
       <div class="exp-item fade-4">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="S"><img src="assets/sejafuturo.jpeg" alt="Seja Futuro" onerror="this.remove()"></span>
+          <span class="logo-chip" data-letter="S"><img src="assets/sejafuturo.jpeg" alt="Seja Futuro"
+              onerror="this.remove()"></span>
           <span class="label">Volunteer</span>2020 – 2022<br><br>São Paulo, Brazil
         </div>
         <div>
           <div class="exp-role">Member</div>
           <div class="exp-company">Seja Futuro NGO</div>
-          <div class="exp-desc">Youth-focused digital initiative connecting emerging technologists with civic and societal challenges in Brazil.</div>
+          <div class="exp-desc">Youth-focused digital initiative connecting emerging technologists with civic and
+            societal challenges in Brazil.</div>
         </div>
       </div>
     </div>
@@ -264,7 +322,8 @@
     <div class="exp-list">
       <div class="exp-item fade-4">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="N" style="--chip: 88px;"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()" style="transform: scale(1.4);"></span>
+          <span class="logo-chip" data-letter="N" style="--chip: 88px;"><img src="assets/nyu.png" alt="NYU"
+              onerror="this.remove()" style="transform: scale(1.4);"></span>
           <span class="label">Upcoming</span>Fall 2026 – 2028<br><br>New York, NY
         </div>
         <div>
@@ -276,13 +335,16 @@
 
       <div class="exp-item fade-4">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="S"><img src="assets/sau.png" alt="St. Ambrose" onerror="this.remove()"></span>
+          <span class="logo-chip" data-letter="S"><img src="assets/sau.png" alt="St. Ambrose"
+              onerror="this.remove()"></span>
           <span class="label">Degree</span>Aug 2022 – May 2026<br><br>Davenport, IA
         </div>
         <div>
           <div class="exp-role">B.S. Data Science & Analytics · B.S. Mathematics</div>
           <div class="exp-company">St. Ambrose University</div>
-          <div class="exp-desc">Double major with minors in Computer Science and Statistics. Recipient of Academic and Athletic Scholarships. Focus on machine learning, statistical modeling, and applied mathematics with emphasis on production systems and scalability.</div>
+          <div class="exp-desc">Double major with minors in Computer Science and Statistics. Recipient of Academic and
+            Athletic Scholarships. Focus on machine learning, statistical modeling, and applied mathematics with
+            emphasis on production systems and scalability.</div>
         </div>
       </div>
     </div>
@@ -294,25 +356,31 @@
       <div class="skill-group">
         <div class="sg-label">Languages</div>
         <div class="sg-pills">
-          <span class="sg-pill">Python</span><span class="sg-pill">SQL</span><span class="sg-pill">R</span><span class="sg-pill">Java</span><span class="sg-pill">JavaScript</span>
+          <span class="sg-pill">Python</span><span class="sg-pill">SQL</span><span class="sg-pill">R</span><span
+            class="sg-pill">Java</span><span class="sg-pill">JavaScript</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="sg-label">ML / AI</div>
         <div class="sg-pills">
-          <span class="sg-pill">PyTorch</span><span class="sg-pill">SBERT</span><span class="sg-pill">XGBoost</span><span class="sg-pill">scikit-learn</span><span class="sg-pill">HDBSCAN</span><span class="sg-pill">Ollama</span>
+          <span class="sg-pill">PyTorch</span><span class="sg-pill">SBERT</span><span
+            class="sg-pill">XGBoost</span><span class="sg-pill">scikit-learn</span><span
+            class="sg-pill">HDBSCAN</span><span class="sg-pill">Ollama</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="sg-label">Data & Storage</div>
         <div class="sg-pills">
-          <span class="sg-pill">ChromaDB</span><span class="sg-pill">Pandas</span><span class="sg-pill">NumPy</span><span class="sg-pill">BigQuery</span><span class="sg-pill">NetworkX</span><span class="sg-pill">Looker Studio</span>
+          <span class="sg-pill">ChromaDB</span><span class="sg-pill">Pandas</span><span
+            class="sg-pill">NumPy</span><span class="sg-pill">BigQuery</span><span class="sg-pill">NetworkX</span><span
+            class="sg-pill">Looker Studio</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="sg-label">Cloud & Tools</div>
         <div class="sg-pills">
-          <span class="sg-pill">AWS</span><span class="sg-pill">GCP</span><span class="sg-pill">Docker</span><span class="sg-pill">Flask</span><span class="sg-pill">GitHub</span><span class="sg-pill">Postman</span>
+          <span class="sg-pill">AWS</span><span class="sg-pill">GCP</span><span class="sg-pill">Docker</span><span
+            class="sg-pill">Flask</span><span class="sg-pill">GitHub</span><span class="sg-pill">Postman</span>
         </div>
       </div>
     </div>
@@ -324,4 +392,5 @@
     <span class="footer-loc">Davenport, Iowa → New York City</span>
   </footer>
 </body>
+
 </html>
