@@ -15,11 +15,13 @@
       grid-template-columns: 150px 1fr;
       gap: 3rem;
       padding: 2.2rem 0;
+      padding-left: 0;
       border-bottom: 1px solid var(--border);
-      transition: padding-left 0.2s;
+      border-left: 2px solid transparent;
+      transition: padding-left 0.2s, border-left-color 0.2s;
     }
     .exp-item:first-child { border-top: 1px solid var(--border); }
-    .exp-item:hover { padding-left: 0.4rem; }
+    .exp-item:hover { padding-left: 0.6rem; border-left-color: var(--blue); }
 
     .exp-date {
       font-family: var(--font-mono);
@@ -38,7 +40,7 @@
       margin-bottom: 0.3rem;
     }
     .exp-date .logo-chip {
-      --chip: 50px;
+      --chip: 62px;
       display: flex;
       margin-bottom: 0.85rem;
     }
@@ -88,11 +90,13 @@
       border-radius: 10px;
       padding: 1.3rem;
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      border-top: 2px solid var(--border);
     }
     .skill-group:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(27,61,120,0.07);
       border-color: var(--border-2);
+      border-top-color: var(--blue);
     }
 
     .sg-label {
@@ -101,7 +105,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--muted);
+      color: var(--blue);
       margin-bottom: 0.8rem;
     }
 
@@ -110,11 +114,12 @@
     .sg-pill {
       font-family: var(--font-mono);
       font-size: 0.71rem;
-      padding: 0.25rem 0.6rem;
+      padding: 0.25rem 0.65rem;
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: 4px;
       color: var(--ink-2);
+      letter-spacing: 0.03em;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
     .sg-pill:hover {
@@ -174,6 +179,9 @@
       <a href="https://github.com/lcpizani" target="_blank" class="nav-icon" title="GitHub">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
       </a>
+      <a href="https://kaggle.com/lucascarbogninpizani" target="_blank" class="nav-icon" title="Kaggle">
+        <img src="assets/kaggle.png" alt="Kaggle">
+      </a>
     </div>
   </nav>
 
@@ -205,7 +213,7 @@
 
       <div class="exp-item fade-3">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()"></span>
+          <span class="logo-chip" data-letter="N"><img src="assets/noonapp.jpeg" alt="Noon App" onerror="this.remove()" style="transform: scale(1.55);"></span>
           <span class="label">Internship</span>Jun – Aug 2024<br><br>Brazil / USA
         </div>
         <div>
@@ -253,7 +261,7 @@
     <div class="exp-list">
       <div class="exp-item fade-4">
         <div class="exp-date">
-          <span class="logo-chip" data-letter="N"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()"></span>
+          <span class="logo-chip" data-letter="N" style="--chip: 88px;"><img src="assets/nyu.png" alt="NYU" onerror="this.remove()" style="transform: scale(1.4);"></span>
           <span class="label">Upcoming</span>Fall 2026 – 2028<br><br>New York, NY
         </div>
         <div>
@@ -308,8 +316,9 @@
   </div>
 
   <footer>
-    <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa → New York City</span>
+    <span class="footer-copy">© 2026 Lucas Carbognin Pizani</span>
+    <span class="footer-mark">LP</span>
+    <span class="footer-loc">Davenport, Iowa → New York City</span>
   </footer>
 </body>
 </html>

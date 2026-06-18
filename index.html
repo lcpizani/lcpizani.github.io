@@ -19,6 +19,9 @@
       gap: 5rem;
       align-items: center;
       padding-top: 2rem;
+      background:
+        radial-gradient(ellipse 70% 55% at 28% 55%, rgba(27,61,120,0.032) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 78% 30%, rgba(181,103,14,0.022) 0%, transparent 60%);
     }
 
     .hero-greeting {
@@ -136,7 +139,7 @@
       height: 72%;
       background: var(--blue);
       border-radius: 16px;
-      opacity: 0.06;
+      opacity: 0.08;
       z-index: 0;
     }
 
@@ -156,7 +159,7 @@
       overflow: hidden;
       aspect-ratio: 4/5;
       border: 1px solid var(--border);
-      box-shadow: 0 24px 64px rgba(27, 61, 120, 0.13), 0 4px 16px rgba(0, 0, 0, 0.07);
+      box-shadow: 0 28px 72px rgba(27, 61, 120, 0.16), 0 6px 20px rgba(0, 0, 0, 0.08);
     }
 
     .photo-frame img {
@@ -203,7 +206,7 @@
     /* ── SECTION SEPARATOR ── */
     .section-hr {
       height: 1px;
-      background: var(--border);
+      background: linear-gradient(90deg, transparent 0%, var(--border-2) 15%, var(--border) 50%, var(--border-2) 85%, transparent 100%);
       margin: 4.5rem 0;
     }
 
@@ -244,11 +247,13 @@
     .ci {
       background: var(--surface);
       padding: 1.8rem 1.7rem;
-      transition: background 0.15s;
+      border-top: 2px solid transparent;
+      transition: background 0.18s, border-top-color 0.18s;
     }
 
     .ci:hover {
       background: var(--surface-2);
+      border-top-color: var(--blue);
     }
 
     .ci .logo-chip {
@@ -342,29 +347,29 @@
       transform: scale(1.04);
     }
 
-    /* light-toned gradient thumbs */
+    /* gradient thumbs */
     .thumb-purple {
-      background: linear-gradient(135deg, #EEF1FB 0%, #C8CEEF 60%, #A8B1EA 100%);
+      background: linear-gradient(135deg, #E5E9F8 0%, #B8C0E8 55%, #96A1DC 100%);
     }
 
     .thumb-mystery {
-      background: linear-gradient(135deg, #EDF3FD 0%, #C0D2F2 50%, #97B6EA 100%);
+      background: linear-gradient(135deg, #E2ECF9 0%, #AECAEF 50%, #80AAEB 100%);
     }
 
     .thumb-indigo {
-      background: linear-gradient(135deg, #EEF1FC 0%, #C6CBEF 50%, #A5ACEA 100%);
+      background: linear-gradient(135deg, #E5E9F8 0%, #BBC2EA 50%, #98A1DF 100%);
     }
 
     .thumb-amber {
-      background: linear-gradient(135deg, #FDF8F0 0%, #F5E3C0 50%, #EBC98A 100%);
+      background: linear-gradient(135deg, #FBF3E4 0%, #F0D9A8 50%, #E4BF72 100%);
     }
 
     .thumb-blue {
-      background: linear-gradient(135deg, #EDF5FD 0%, #BFDAF8 50%, #92C0F0 100%);
+      background: linear-gradient(135deg, #E3EFF9 0%, #B0D3F4 50%, #7DB5EC 100%);
     }
 
     .thumb-teal {
-      background: linear-gradient(135deg, #EDFAF5 0%, #BAEFDA 50%, #87E4C0 100%);
+      background: linear-gradient(135deg, #E2F7EF 0%, #A8E8CC 50%, #6DD9A8 100%);
     }
 
     .feat-thumb::before {
@@ -521,6 +526,9 @@
             d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
         </svg>
       </a>
+      <a href="https://kaggle.com/lucascarbogninpizani" target="_blank" class="nav-icon" title="Kaggle">
+        <img src="assets/kaggle.png" alt="Kaggle">
+      </a>
     </div>
   </nav>
 
@@ -536,7 +544,7 @@
           am passionate about solving real-world problems with data-driven systems.
         </p>
 
-        <div class="hero-stats fade-3">
+        <!-- <div class="hero-stats fade-3">
           <div class="hstat">
             <div class="hstat-n">3+</div>
             <div class="hstat-l">years building ML</div>
@@ -546,10 +554,10 @@
             <div class="hstat-l">projects shipped</div>
           </div>
           <div class="hstat">
-            <div class="hstat-n">Top 37%</div>
+            <div class="hstat-n">Top 13%</div>
             <div class="hstat-l">Kaggle March Mania</div>
           </div>
-        </div>
+        </div> -->
 
         <div class="hero-ctas fade-4">
           <a class="btn btn-primary" href="projects.html">Explore Portfolio →</a>
@@ -623,12 +631,11 @@
             professional capabilities and 312 categories.</div>
         </div>
         <div class="ci">
-          <span class="logo-chip" data-letter="K"><img src="assets/kaggle.jpeg" alt="Kaggle"
+          <span class="logo-chip" data-letter="K"><img src="assets/kaggle.png" alt="Kaggle"
               onerror="this.remove()"></span>
           <div class="ci-num">03 · Competition</div>
           <div class="ci-title">March Mania 2026</div>
-          <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Ranked top 37% using
-            BigQuery, Monte Carlo, and Elo models.</div>
+          <div class="ci-body">Competing in Kaggle's NCAA tournament prediction challenge. Top 13% in 2025 — Brier score 0.1287, 451st out of 3,462 teams — using BigQuery, Monte Carlo, and Elo models.</div>
         </div>
       </div>
     </div>
@@ -648,10 +655,13 @@
 
         <div class="feat-card">
           <div class="feat-thumb thumb-purple">
-            <span class="thumb-emoji">🤖</span>
+            <img src="assets/screenshot_abe.png" alt="Agricultural Business Expert" />
           </div>
           <div class="feat-body">
-            <div class="feat-cat">AI Agents</div>
+            <div class="feat-cat" style="display:flex;align-items:center;gap:0.5rem;">
+              <span class="logo-chip" data-letter="P"><img src="assets/pi515.png" alt="Pi515" onerror="this.remove()"></span>
+              AI Agents
+            </div>
             <div class="feat-title">AI Agent for Pi515 Day of Innovation</div>
             <p class="feat-desc">Built multi-modal AI agents for Pi515's Day of Innovation, applying practical AI to
               real Iowa community problems. Finalist.</p>
@@ -695,8 +705,9 @@
   </div>
 
   <footer>
-    <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa → New York City</span>
+    <span class="footer-copy">© 2026 Lucas Carbognin Pizani</span>
+    <span class="footer-mark">LP</span>
+    <span class="footer-loc">Davenport, Iowa → New York City</span>
   </footer>
 </body>
 

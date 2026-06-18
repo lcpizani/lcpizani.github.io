@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Lucas Pizani</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
     .contact-intro {
@@ -29,11 +32,20 @@
       align-items: center;
       gap: 2rem;
       padding: 1.2rem 0;
+      padding-left: 0;
       border-bottom: 1px solid var(--border);
-      transition: padding-left 0.15s;
+      border-left: 2px solid transparent;
+      transition: padding-left 0.15s, border-left-color 0.15s;
     }
-    .contact-row:first-child { border-top: 1px solid var(--border); }
-    .contact-row:hover { padding-left: 0.5rem; }
+
+    .contact-row:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-row:hover {
+      padding-left: 0.65rem;
+      border-left-color: var(--blue);
+    }
 
     .contact-label {
       font-family: var(--font-mono);
@@ -55,12 +67,15 @@
       font-size: 0.7rem;
       font-weight: 500;
       color: var(--blue);
-      border-bottom: 1px solid rgba(27,61,120,0.3);
+      border-bottom: 1px solid rgba(27, 61, 120, 0.3);
       padding-bottom: 1px;
       white-space: nowrap;
       transition: opacity 0.15s;
     }
-    .contact-action:hover { opacity: 0.65; }
+
+    .contact-action:hover {
+      opacity: 0.65;
+    }
 
     /* availability */
     .avail-box {
@@ -68,6 +83,7 @@
       max-width: 680px;
       background: var(--surface);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
       border-radius: 14px;
       padding: 2rem 2.5rem;
       display: flex;
@@ -98,7 +114,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--green-dim);
-      border: 1px solid rgba(26,102,71,0.22);
+      border: 1px solid rgba(26, 102, 71, 0.22);
       border-radius: 20px;
       padding: 0.5rem 1.1rem;
       font-family: var(--font-mono);
@@ -110,16 +126,27 @@
     }
 
     .avail-badge-dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: currentColor;
       animation: pulse 2s ease-in-out infinite;
     }
 
     @media (max-width: 640px) {
-      .contact-row { grid-template-columns: 100px 1fr; }
-      .contact-action { display: none; }
-      .avail-box { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
+      .contact-row {
+        grid-template-columns: 100px 1fr;
+      }
+
+      .contact-action {
+        display: none;
+      }
+
+      .avail-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -140,10 +167,19 @@
     </ul>
     <div class="nav-icons">
       <a href="https://linkedin.com/in/lucas-c-pizani" target="_blank" class="nav-icon" title="LinkedIn">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+          <circle cx="4" cy="4" r="2" />
+        </svg>
       </a>
       <a href="https://github.com/lcpizani" target="_blank" class="nav-icon" title="GitHub">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+        </svg>
+      </a>
+      <a href="https://kaggle.com/lucascarbogninpizani" target="_blank" class="nav-icon" title="Kaggle">
+        <img src="assets/kaggle.png" alt="Kaggle">
       </a>
     </div>
   </nav>
@@ -174,14 +210,15 @@
       </div>
       <div class="contact-row fade-5">
         <span class="contact-label">Location</span>
-        <span class="contact-val">Davenport, Iowa — open to relocation & remote</span>
+        <span class="contact-val">New York City, NY</span>
       </div>
     </div>
 
     <div class="avail-box fade-5">
       <div>
         <div class="avail-title">Availability</div>
-        <div class="avail-body">Open to full-time roles in data science, machine learning engineering, and AI from May 2026.</div>
+        <div class="avail-body">Open to part-time roles / internships in data science, machine learning engineering, and
+          AI research starting August 2026.</div>
       </div>
       <div class="avail-badge">
         <div class="avail-badge-dot"></div>
@@ -191,8 +228,10 @@
   </div>
 
   <footer>
-    <span>© 2026 Lucas Carbognin Pizani</span>
-    <span>Davenport, Iowa → New York City</span>
+    <span class="footer-copy">© 2026 Lucas Carbognin Pizani</span>
+    <span class="footer-mark">LP</span>
+    <span class="footer-loc">Davenport, Iowa → New York City</span>
   </footer>
 </body>
+
 </html>
