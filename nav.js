@@ -22,3 +22,16 @@
     });
   });
 })();
+
+// Google Analytics: send a named event for every link marked with data-track
+(function () {
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('[data-track]');
+    if (!link || typeof gtag !== 'function') return;
+    gtag('event', 'cta_click', {
+      cta_name: link.getAttribute('data-track'),
+      link_url: link.href || '',
+      page_path: location.pathname
+    });
+  });
+})();
